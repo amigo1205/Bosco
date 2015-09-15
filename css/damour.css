@@ -213,12 +213,14 @@ h3.title {
 
 .owl-prev {
   background: url('../img/sprite.png') no-repeat -50px -84px;
-  left: -76px;
+  /*left: -76px;*/
+  left: -16px;
 }
 
 .owl-next {
   background: url('../img/sprite.png') no-repeat -50px -134px;
-  right: -76px;
+  /*right: -76px;*/
+  right: -16px;
 }
 
 .owl-prev:hover, 
@@ -1027,8 +1029,25 @@ footer .block-info p a {
     padding-bottom: 5px;
   }
   .block-search {
+    left: 15px;
     position: fixed;
     top: 10px;
+  }
+}
+
+@media only screen and (max-width : 510px) {
+  h3.title {
+    font-size: 24px;
+  }
+  .node-detail > h2 {
+    font-size: 24px;
+  }
+  .node-image {
+    float: none;
+  }
+  .node-image img {
+    height: auto;
+    width: 100%;
   }
 }
 
@@ -1057,5 +1076,12 @@ footer .block-info p a {
   }
   .header-top .block-menu {
     margin-top: 8px;
+  }
+}
+
+@media only screen and (max-width : 410px) {
+  .product-item > a img {
+    height: auto;
+    width: 100%;
   }
 }
