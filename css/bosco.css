@@ -54,15 +54,15 @@ body {
   color: #333;
 }
 
-a, 
-a:link, 
-a:visited, 
+a,
+a:link,
+a:visited,
 a.visited {
   color: #B4C0C6;
 }
 
-a:hover, 
-a:active, 
+a:hover,
+a:active,
 a:focus {
   color: #fff;
   text-decoration: none;
@@ -85,12 +85,12 @@ blockquote p {
   color: #fff !important;
 }
 
-input, 
+input,
 .form-control {
   box-shadow: none;
 }
 
-.form-submit, 
+.form-submit,
 .form-reset {
   border: 1px solid #E63A38;
   border-radius: 3px;
@@ -105,7 +105,7 @@ input,
   text-align: center;
 }
 
-.form-submit:hover, 
+.form-submit:hover,
 .form-reset:hover {
   background: #222222;
   color: #fff;
@@ -202,9 +202,9 @@ h3.title {
   color: #B4C0C6;
 }
 
-.block-menu a.active, 
+.block-menu a.active,
 .block-menu a:hover,
-.block-session a.active, 
+.block-session a.active,
 .block-session a:hover {
   color: #fff !important;
 }
@@ -255,8 +255,8 @@ h3.title {
 }
 
 .block-buttons a.active,
-.block-buttons a:hover, 
-.block-buttons a.btn-primary, 
+.block-buttons a:hover,
+.block-buttons a.btn-primary,
 .block-buttons a:hover {
   background: #E63A38;
   color: #fff;
@@ -543,7 +543,7 @@ a.btn-video:hover {
   margin: 0;
 }
 
-.block-gallery li a p.gallery-item-birthday, 
+.block-gallery li a p.gallery-item-birthday,
 .block-gallery li a p.gallery-item-location {
   padding-left: 13px;
 }
@@ -607,7 +607,7 @@ a.btn-video:hover {
   transition: background .25s ease-in-out;
   -moz-transition: background .25s ease-in-out;
   -webkit-transition: background .25s ease-in-out;
-  background: rgba(233, 46, 46, 0.9);
+  background: rgba(68, 68, 68, 0.9);
   height: 800px;
   left: 0;
   position: absolute;
@@ -616,7 +616,7 @@ a.btn-video:hover {
 }
 
 .block-works .block-work-item a:hover .block-works-background {
-  background: rgba(68, 68, 68, 0.9);
+  background: rgba(233, 46, 46, 0.9);
 }
 
 .block-works .block-work-item .block-works-detail {
@@ -678,7 +678,7 @@ a.btn-video:hover {
   padding: 70px 0 80px;
 }
 
-#page-home .block-suscription h3, 
+#page-home .block-suscription h3,
 #page-home .block-suscription h5 {
   padding-left: 2%;
   padding-right: 2%;
@@ -743,7 +743,7 @@ a.btn-video:hover {
   margin: 0;
 }
 
-.block-reports li p.report-item-birthday, 
+.block-reports li p.report-item-birthday,
 .block-reports li p.report-item-location {
   padding-left: 13px;
 }
@@ -826,7 +826,7 @@ a.btn-video:hover {
 /* Work Item */
 
 .block-works-item {
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
 }
 
@@ -922,17 +922,17 @@ a.btn-video:hover {
   padding: 15px 30px;
 }
 
-.modal-body input[type=text], 
-.modal-body input[type=email], 
-.modal-body input[type=phone], 
-.modal-body input[type=password], 
+.modal-body input[type=text],
+.modal-body input[type=email],
+.modal-body input[type=phone],
+.modal-body input[type=password],
 .modal-body textarea {
   border-color: #eee;
 }
 
-.modal-body input[type=text], 
-.modal-body input[type=email], 
-.modal-body input[type=phone], 
+.modal-body input[type=text],
+.modal-body input[type=email],
+.modal-body input[type=phone],
 .modal-body input[type=password] {
   height: 42px !important;
 }
@@ -1143,7 +1143,7 @@ a.btn-video:hover {
   background: url('../img/sprite.png') no-repeat -132px -40px;
 }
 
-.check-on, 
+.check-on,
 .check-off {
   cursor: pointer;
   display: block;
@@ -1151,7 +1151,7 @@ a.btn-video:hover {
   width: 24px;
 }
 
-.modal-report-info p .check-on, 
+.modal-report-info p .check-on,
 .modal-report-info p .check-off {
   float: right;
 }
@@ -1173,7 +1173,7 @@ a.btn-video:hover {
   font-size: 14px;
   height: 34px;
   line-height: 18px;
-  max-width: 
+  max-width:
 }
 
 /* Modal Form Report */
@@ -1212,7 +1212,7 @@ a.btn-video:hover {
   width: 18px;
 }
 
-.modal-form-report-menu li:hover em, 
+.modal-form-report-menu li:hover em,
 .modal-form-report-menu li .tab-on em {
   background: #E73737;
   color: #fff;
@@ -1222,7 +1222,7 @@ a.btn-video:hover {
   border: 1px solid #204d74;
 }
 
-#form-report-founds .modal-form-report-menu li:hover em, 
+#form-report-founds .modal-form-report-menu li:hover em,
 #form-report-founds .modal-form-report-menu li .tab-on em {
   background: #204d74;
 }
@@ -1249,9 +1249,9 @@ a.btn-video:hover {
   margin-top: 2px;
 }
 
-.modal-form-report form input[type=text], 
-.modal-form-report form input[type=email], 
-.modal-form-report form input[type=phone], 
+.modal-form-report form input[type=text],
+.modal-form-report form input[type=email],
+.modal-form-report form input[type=phone],
 .modal-form-report form input[type=password] {
   border-radius: 1px;
   height: 38px !important;
@@ -1346,7 +1346,7 @@ a.btn-video:hover {
   margin-top: -7px;
 }
 
-.modal-form-report #form-report-lost-tab-2 .form-actions, 
+.modal-form-report #form-report-lost-tab-2 .form-actions,
 .modal-form-report #form-report-founds-tab-2 .form-actions {
   margin-top: 10px;
 }
@@ -1358,7 +1358,7 @@ a.btn-video:hover {
   text-align: right;
 }
 
-.modal-form-report #form-report-lost-tab-3 .form-actions, 
+.modal-form-report #form-report-lost-tab-3 .form-actions,
 .modal-form-report #form-report-founds-tab-3 .form-actions {
   margin-top: 53px;
 }
@@ -1487,13 +1487,13 @@ a.btn-video:hover {
   padding-bottom: 100px;
 }
 
-.form-contact input[type="text"], 
-.form-contact input[type="password"], 
+.form-contact input[type="text"],
+.form-contact input[type="password"],
 .form-contact textarea {
-  border: none; 
+  border: none;
 }
 
-.form-contact input[type="text"], 
+.form-contact input[type="text"],
 .form-contact input[type="password"] {
   height: 42px;
 }
@@ -1723,7 +1723,7 @@ footer .block-socialnetwork li a.link-instagran {
     height: 4px;
     width: 25px;
   }
-  .navbar-default .navbar-toggle:hover, 
+  .navbar-default .navbar-toggle:hover,
   .navbar-default .navbar-toggle:focus {
     background-color: #FFF !important;
   }
@@ -1735,7 +1735,7 @@ footer .block-socialnetwork li a.link-instagran {
   .navbar-header {
     background: #063042;
   }
-  .navbar-fixed-top .navbar-collapse, 
+  .navbar-fixed-top .navbar-collapse,
   .navbar-fixed-bottom .navbar-collapse {
     background: #fff;
   }
@@ -1753,7 +1753,7 @@ footer .block-socialnetwork li a.link-instagran {
     color: #063042;
     font-size: 16px;
   }
-  .block-menu a.active, 
+  .block-menu a.active,
   .block-menu a:hover {
     color: #111 !important;
   }
@@ -1806,7 +1806,7 @@ footer .block-socialnetwork li a.link-instagran {
     max-width: 100%;
     width: 100%;
   }
-  .form-actions, 
+  .form-actions,
   .block-filters .form-actions {
     float: none;
   }
@@ -1948,14 +1948,14 @@ footer .block-socialnetwork li a.link-instagran {
 }
 
 @media only screen and (max-width : 516px) {
-  .block-reports li, 
+  .block-reports li,
   #block-reports-founds li {
     float: none;
     height: auto;
     margin: 0 auto;
     max-width: 216px;
   }
-  .block-reports li a.report-add, 
+  .block-reports li a.report-add,
   #block-reports-founds li a.report-add {
     height: auto;
     padding-bottom: 20px;
@@ -2011,7 +2011,7 @@ footer .block-socialnetwork li a.link-instagran {
   .modal-form-report .form-date {
     margin-bottom: 10px;
   }
-  .modal-form-report .form-date, 
+  .modal-form-report .form-date,
   .modal-form-report .form-time {
     margin-right: 0;
     width: 100%;
