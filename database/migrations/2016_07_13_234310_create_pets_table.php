@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('owner_id')->unsigned();
             $table->string('name', 45);
-            $table->string('last_name', 45);
-            $table->string('phone', 10);
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('race', 45);
+            $table->enum('gender', ['cat','dog']);
+            $table->string('description', 255);
             $table->timestamps();
+            $table->foreign('owner_id')->references('id')->on('users')->onUpdate('CASCADE');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('pets');
     }
 }

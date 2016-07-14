@@ -301,6 +301,7 @@ h3.title {
   float: right;
 }
 
+.block-filters .form-actions a, 
 input[type="submit"] {
   border: 1px solid #E63A38;
   border-radius: 3px;
@@ -316,6 +317,7 @@ input[type="submit"] {
   text-align: center;
 }
 
+.block-filters .form-actions a:hover, 
 input[type="submit"]:hover {
   border-color: #063042;
   background: #063042;
@@ -609,7 +611,7 @@ a.btn-video:hover {
   transition: background .25s ease-in-out;
   -moz-transition: background .25s ease-in-out;
   -webkit-transition: background .25s ease-in-out;
-  background: rgba(68, 68, 68, 0.9);
+  background: rgba(10, 10, 10, 0.6);
   height: 800px;
   left: 0;
   position: absolute;

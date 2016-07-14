@@ -3,7 +3,7 @@
   <div class="block-filters clearfix">
     <div class="col-lg-12 col-md-12">
       <div class="filter-image"></div>
-      <form class="form-inline" action="{{ url('mis-reportes') }}" method="post">
+      <form class="form-inline" action="#" method="get">
         <div class="form-group">
           <select class="form-control">
             <option default>País</option>
@@ -23,7 +23,7 @@
           </select>
         </div>
         <div class="form-group form-actions">
-          <input type="submit" class="btn btn-primary" value="Reportar">
+          <a href="{{ url('mis-reportes') }}" class="btn btn-primary">Reportar</a>
         </div>
       </form>
     </div>

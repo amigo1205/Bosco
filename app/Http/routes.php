@@ -18,7 +18,7 @@ Route::get('contactanos', 'indexController@getContactUs');
 Route::get('mascotas', 'petsController@getPetsLost');
 Route::get('mascotas/perdidos', 'petsController@getPetsLost');
 Route::get('mascotas/encontrados', 'petsController@getPetsFound');
-Route::match(['get', 'post'], 'mis-reportes', 'reportsController@index');
+Route::get('mis-reportes', 'reportsController@index');
 Route::get('como-funciona', 'functioningController@index');
 Route::get('como-funciona/web', 'functioningController@getFunctioningWeb');
 Route::get('como-funciona/app', 'functioningController@getFunctioningApp');
