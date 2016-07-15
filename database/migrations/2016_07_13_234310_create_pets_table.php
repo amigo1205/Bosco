@@ -16,8 +16,8 @@ class CreatePetsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('owner_id')->unsigned();
             $table->string('name', 45);
-            $table->string('race', 45);
-            $table->enum('gender', ['cat','dog']);
+            $table->enum('race', ['cat','dog']);
+            $table->enum('gender', ['male','female']);
             $table->string('description', 255);
             $table->timestamps();
             $table->foreign('owner_id')->references('id')->on('users')->onUpdate('CASCADE');

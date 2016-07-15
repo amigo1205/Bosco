@@ -13,7 +13,7 @@ class ReportsTableSeeder extends Seeder
     public function run()
     {
         DB::table('reports')->insert([
-            'pets_id' => rand(1,10),
+            'pet_id' => rand(1,10),
             'last_location_id' => rand(1,5),
             'date' => new DateTime(),
             'description' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sollicitudin facilisis erat a vestibulum.</p>',

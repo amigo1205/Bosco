@@ -18,14 +18,16 @@
       <div class="block-reports-content col-lg-12">
         <div id="block-reports-lost" class="block-reports clearfix">
           <div class="view-content">
+          @if(!empty($reports['lost']['data']))
             <ul class="text-left">
+            @foreach($reports['lost']['data'] as $item)
               <li>
                 <div class="report-item-content">
-                  <img src="{{ asset('images/report_item_image.png') }}" />
+                  <img src="{{ asset('images/pets/' . $item['image']) }}" />
                   <div class="report-item-detail">
-                    <h2>Aita</h2>
-                    <p class="report-item-birthday">30 Marzo 2016</p>
-                    <p class="report-item-location">Las Copaibas, La Molina</p>
+                    <h2>{{ $item['name'] }}</h2>
+                    <p class="report-item-birthday">{{ $item['date'] }}</p>
+                    <p class="report-item-location">{{ $item['address'] }}</p>
                   </div>
                 </div>
                 <div class="report-buttons">
@@ -33,73 +35,37 @@
                   <a data-toggle="modal" href="#" class="btn btn-primary btn-green btn-block">Encontrado</a>
                 </div>
               </li>
-              <li>
-                <div class="report-item-content">
-                  <img src="{{ asset('images/report_item_image.png') }}" />
-                  <div class="report-item-detail">
-                    <h2>Aita</h2>
-                    <p class="report-item-birthday">30 Marzo 2016</p>
-                    <p class="report-item-location">Las Copaibas, La Molina</p>
-                  </div>
-                </div>
-                <div class="report-buttons">
-                  <a data-toggle="modal" href="#report-detail-lost" class="btn btn-primary btn-block">Generar volante</a>
-                  <a data-toggle="modal" href="#" class="btn btn-primary btn-green btn-block">Encontrado</a>
-                </div>
-              </li>
-              <li>
-                <div class="report-item-content">
-                  <img src="{{ asset('images/report_item_image.png') }}" />
-                  <div class="report-item-detail">
-                    <h2>Aita</h2>
-                    <p class="report-item-birthday">30 Marzo 2016</p>
-                    <p class="report-item-location">Las Copaibas, La Molina</p>
-                  </div>
-                </div>
-                <div class="report-buttons">
-                  <a data-toggle="modal" href="#report-detail-lost" class="btn btn-primary btn-block">Generar volante</a>
-                  <a data-toggle="modal" href="#" class="btn btn-primary btn-green btn-block">Encontrado</a>
-                </div>
-              </li>
+              @endforeach
               <li>
                 <a data-toggle="modal" href="#form-report-lost" class="report-add">
                   <em>+</em>
-                  <p>Reportar perdido</p>
+                  <p>Reportar encontrado</p>
                 </a>
               </li>
             </ul>
+            @endif
           </div>
         </div>
         <div class="report-line"></div>
         <div id="block-reports-founds" class="block-reports clearfix">
           <div class="view-content">
+          @if(!empty($reports['founds']['data']))
             <ul class="text-left">
+            @foreach($reports['founds']['data'] as $item)
               <li>
                 <div class="report-item-content">
-                  <img src="{{ asset('images/report_item_image.png') }}" />
+                  <img src="{{ asset('images/pets/' . $item['image']) }}" />
                   <div class="report-item-detail">
-                    <h2>Aita</h2>
-                    <p class="report-item-birthday">30 Marzo 2016</p>
-                    <p class="report-item-location">Las Copaibas, La Molina</p>
+                    <h2>{{ $item['name'] }}</h2>
+                    <p class="report-item-birthday">{{ $item['date'] }}</p>
+                    <p class="report-item-location">{{ $item['address'] }}</p>
                   </div>
                 </div>
                 <div class="report-buttons">
                   <a data-toggle="modal" href="#report-detail-founds" class="btn btn-primary btn-block">Generar volante</a>
                 </div>
               </li>
-              <li>
-                <div class="report-item-content">
-                  <img src="{{ asset('images/report_item_image.png') }}" />
-                  <div class="report-item-detail">
-                    <h2>Aita</h2>
-                    <p class="report-item-birthday">30 Marzo 2016</p>
-                    <p class="report-item-location">Las Copaibas, La Molina</p>
-                  </div>
-                </div>
-                <div class="report-buttons">
-                  <a data-toggle="modal" href="#report-detail-founds" class="btn btn-primary btn-block">Generar volante</a>
-                </div>
-              </li>
+              @endforeach
               <li>
                 <a data-toggle="modal" href="#form-report-founds" class="report-add">
                   <em>+</em>
@@ -107,6 +73,7 @@
                 </a>
               </li>
             </ul>
+            @endif
           </div>
         </div>
       </div>

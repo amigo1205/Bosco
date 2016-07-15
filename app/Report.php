@@ -24,4 +24,56 @@ class Report extends Model
     {
         return $this->belongsTo('App\Pet');
     }
+
+    public static function getDataReports($status = FALSE, $userId = FALSE, $paginate = FALSE, $numPerItem = 10, $path = 'mascotas/perdidos')
+    {
+        $data = [];
+        
+        $result = Report::with(
+            [
+                'location'=>function($queryLocation){
+                    $queryLocation->select('id', 'address');
+                },
+                'pet'=>function($queryPet) use ($userId){
+                    $queryPet->with(
+                        [
+                            'photos'=>function($queryPhoto){
+                                $queryPhoto->select('url', 'pet_id');
+                            }, 
+                            'user'=>function($queryUser) use ($userId){
+                                if (isset($userId)) $queryUser->where('id', '=', $userId);
+                                $queryUser->select('id', 'name');
+                            }
+                        ]
+                    )->select('id', 'owner_id', 'name', 'description');
+                }
+            ]
+        )->select('pet_id', 'last_location_id', 'status', 'created_at');
+        
+        if ($status) $result->where('status', '=', $status);
+        if ($paginate) {
+            $result = $result->paginate($numPerItem);
+            $result->setPath($path);
+            $paginate = $result->render();
+        }
+        else {
+            $result = $result->get();
+        }
+
+        if (!empty($result)) {
+            foreach ($result as $row) {
+                $location = Location::where('id','=',$row->last_location_id)->select('address')->get();
+                $data[] = [
+                    'name' => $row->pet->name, 
+                    'date' => date('d m Y', strtotime($row->pet->created_at)), 
+                    //'address' => $row->location->address, 
+                    'address' => $location[0]->address, 
+                    'description' => $row->pet->description, 
+                    'image' => $row->pet->photos[0]->url
+                ];
+            }
+        }
+
+        return ['data' => $data, 'paginate' => $paginate];
+    }
 }

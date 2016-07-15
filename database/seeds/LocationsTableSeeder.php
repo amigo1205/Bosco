@@ -13,7 +13,7 @@ class LocationsTableSeeder extends Seeder
     public function run()
     {
         DB::table('locations')->insert([
-            'paren_id' => rand(1,5),
+            'parent_id' => rand(1,5),
             'address' => str_random(45),
             'latitude' => intval('-' . rand(0,99) . '.' . rand(0,9999999)),
             'longitude' => intval('-' . rand(0,99) . '.' . rand(0,9999999)),

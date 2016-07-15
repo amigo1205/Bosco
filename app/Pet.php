@@ -34,4 +34,16 @@ class Pet extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public static function getDataPets()
+    {
+        $result = Pet::with(['photos'=>function($query){
+           $query->select('url','pet_id'); 
+        }])->select('id', 'name', 'description', 'created_at')->get();
+        if (!empty($result)) {
+            foreach ($result as $row) {
+                print $row->photos[0]->url;exit;
+            }
+        }
+    }
 }

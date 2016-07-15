@@ -27,148 +27,25 @@
     <div class="row">
       <div id="block-gallery-founds" class="block-gallery clearfix">
         <div class="view-content">
+        @if(!empty($reports))
           <ul class="text-center">
+          @foreach($reports as $item)
             <li>
               <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
+                <img src="{{ asset('images/pets/' . $item['image']) }}" />
                 <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
+                  {!! $item['description'] !!}
                 </div>
                 <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
+                  <h2>{{ $item['name'] }}</h2>
+                  <p class="gallery-item-birthday">{{ $item['date'] }}</p>
+                  <p class="gallery-item-location">{{ $item['address'] }}</p>
                 </div>
               </a>
             </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle="modal" href="#dog-detail">
-                <img src="{{ asset('images/gallery_item.png') }}" />
-                <div class="gallery-item-hover">
-                  <p>Lana se escapó de mi casa por la noche, cerca de la avenida arboleda.</p>
-                  <p>Porfavor si alguien tiene alguna información, contactenos de inmediato, estamos muy preocupados.</p>
-                </div>
-                <div class="gallery-item-detail">
-                  <h2>Aita</h2>
-                  <p class="gallery-item-birthday">30 Marzo 2016</p>
-                  <p class="gallery-item-location">Las Copaibas, La Molina</p>
-                </div>
-              </a>
-            </li>
+            @endforeach
           </ul>
+          @endif
         </div>
       </div>
     </div>

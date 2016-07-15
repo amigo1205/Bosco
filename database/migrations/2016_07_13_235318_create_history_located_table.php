@@ -15,11 +15,11 @@ class CreateHistoryLocatedTable extends Migration
         Schema::create('history_located', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('history_location_id')->unsigned();
-            $table->bigInteger('pets_id')->unsigned();
+            $table->bigInteger('pet_id')->unsigned();
             $table->string('status', 45);
             $table->timestamps();
             $table->foreign('history_location_id')->references('id')->on('history_locations')->onUpdate('CASCADE');
-            $table->foreign('pets_id')->references('id')->on('pets')->onUpdate('CASCADE');
+            $table->foreign('pet_id')->references('id')->on('pets')->onUpdate('CASCADE');
         });
     }
 

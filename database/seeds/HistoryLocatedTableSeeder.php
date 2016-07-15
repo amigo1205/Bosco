@@ -14,7 +14,7 @@ class HistoryLocatedTableSeeder extends Seeder
     {
         DB::table('history_located')->insert([
             'history_location_id' => rand(1,5),
-            'pets_id' => rand(1,10),
+            'pet_id' => rand(1,10),
             'status' => (rand(0,1) == 1) ? 'lost' : 'found',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),

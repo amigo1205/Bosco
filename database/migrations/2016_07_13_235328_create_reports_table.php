@@ -14,7 +14,7 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('pets_id')->unsigned();
+            $table->bigInteger('pet_id')->unsigned();
             $table->bigInteger('last_location_id')->unsigned();
             $table->timestamp('date');
             $table->string('description', 255);
@@ -22,7 +22,7 @@ class CreateReportsTable extends Migration
             $table->decimal('reward', 6,2);
             $table->string('code_qr', 255);
             $table->timestamps();
-            $table->foreign('pets_id')->references('id')->on('pets')->onUpdate('CASCADE');
+            $table->foreign('pet_id')->references('id')->on('pets')->onUpdate('CASCADE');
             $table->foreign('last_location_id')->references('id')->on('locations')->onUpdate('CASCADE');
         });
     }
