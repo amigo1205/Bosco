@@ -27,13 +27,13 @@
     <div class="row">
       <div id="block-gallery-founds" class="block-gallery clearfix">
         <div class="view-content">
-        @if(!empty($reports))
+        @if(!empty($reports['data']))
           <ul class="text-center">
-          @foreach($reports as $item)
+          @foreach($reports['data'] as $item)
             <li>
-              <a data-toggle="modal" href="#dog-detail">
+              <a data-toggle="modal" href="#pet-detail">
                 <img src="{{ asset('images/pets/' . $item['image']) }}" />
-                <div class="gallery-item-hover">
+                <div class="gallery-item-hover" data-id="{{ $item['id'] }}">
                   {!! $item['description'] !!}
                 </div>
                 <div class="gallery-item-detail">

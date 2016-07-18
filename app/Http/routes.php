@@ -22,3 +22,6 @@ Route::get('mis-reportes', 'reportsController@index');
 Route::get('como-funciona', 'functioningController@index');
 Route::get('como-funciona/web', 'functioningController@getFunctioningWeb');
 Route::get('como-funciona/app', 'functioningController@getFunctioningApp');
+
+// Ajax
+Route::get('mascotas-detalle', 'petsController@getPetsDetail');

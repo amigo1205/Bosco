@@ -31,9 +31,9 @@
           <ul class="text-center">
           @foreach($reports['data'] as $item)
             <li>
-              <a data-toggle="modal" href="#dog-detail">
+              <a data-toggle="modal" href="#pet-detail">
                 <img src="{{ asset('images/pets/' . $item['image']) }}" />
-                <div class="gallery-item-hover">
+                <div class="gallery-item-hover" data-id="{{ $item['id'] }}">
                   {!! $item['description'] !!}
                 </div>
                 <div class="gallery-item-detail">

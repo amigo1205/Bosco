@@ -48,7 +48,7 @@ class Report extends Model
                     )->select('id', 'owner_id', 'name', 'description');
                 }
             ]
-        )->select('pet_id', 'last_location_id', 'status', 'created_at');
+        )->select('pet_id', 'last_location_id', 'status', 'date');
         
         if ($status) $result->where('status', '=', $status);
         if ($paginate) {
@@ -64,8 +64,9 @@ class Report extends Model
             foreach ($result as $row) {
                 $location = Location::where('id','=',$row->last_location_id)->select('address')->get();
                 $data[] = [
+                    'id' => $row->pet->id, 
                     'name' => $row->pet->name, 
-                    'date' => date('d m Y', strtotime($row->pet->created_at)), 
+                    'date' => date('d m Y', strtotime($row->date)), 
                     //'address' => $row->location->address, 
                     'address' => $location[0]->address, 
                     'description' => $row->pet->description, 

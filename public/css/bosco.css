@@ -1373,7 +1373,7 @@ a.btn-video:hover {
 
 /* Dog Detail */
 
-#dog-detail .modal-content {
+#pet-detail .modal-content {
   background: #F1F1F2;
   color: #a8a8a8;
   margin: 50px auto;
@@ -1382,44 +1382,44 @@ a.btn-video:hover {
   padding-top: 10px;
 }
 
-.dog-detail-left {
+.pet-detail-left {
   float: left;
   margin-right: 3%;
   width: 53%;
 }
 
-.dog-detail-right {
+.pet-detail-right {
   float: right;
   width: 44%;
 }
 
-.dog-content label {
+.pet-content label {
   color: #063042;
   font-weight: normal;
   width: 32%;
 }
 
-.dog-detail-image {
+.pet-detail-image {
   margin-bottom: 10px;
 }
 
-.dog-detail-image img {
+.pet-detail-image img {
   max-width: 100%;
 }
 
-.dog-detail-data {
+.pet-detail-data {
   font-size: 13px;
 }
 
-.dog-detail-data p {
+.pet-detail-data p {
   margin-bottom: 0;
 }
 
-.dog-detail-map {
+.pet-detail-map {
   margin-bottom: 10px;
 }
 
-.dog-detail-info-group {
+.pet-detail-info-group {
   -webkit-box-shadow: 0px 4px 3px -2px rgba(153,153,9,1);
   -moz-box-shadow: 0px 4px 3px -2px rgba(153,153,9,1);
   box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.2);
@@ -1428,18 +1428,18 @@ a.btn-video:hover {
   padding: 10px;
 }
 
-.dog-detail-info-group h3 {
+.pet-detail-info-group h3 {
   color: #E95352;
   font-size: 11px;
   margin-top: 0;
 }
 
-.dog-detail-info-group p {
+.pet-detail-info-group p {
   line-height: 18px;
   margin-bottom: 0;
 }
 
-.dog-detail-info-group p label {
+.pet-detail-info-group p label {
   width: 40%;
 }
 
@@ -1465,7 +1465,7 @@ a.btn-video:hover {
   line-height: 28px;
 }
 
-#dog-detail .close {
+#pet-detail .close {
   background: url('../img/sprite.png') no-repeat -47px 0;
   display: block;
   height: 38px;
@@ -1576,6 +1576,25 @@ footer .block-socialnetwork li a.link-instagran {
   display: inline-block;
   height: 16px;
   width: 16px;
+}
+
+.pagination {
+  display: block;
+  height: 30px;
+  margin: 0 auto 20px !important;
+  text-align: center;
+}
+
+.pagination > li a, 
+.pagination > li span {
+  display: inline-block;
+  float: none;
+}
+
+.pagination > .active a, 
+.pagination > .active span {
+  border: 1px solid #E63A38;
+  background: #E63A38;
 }
 
 @media only screen and (min-width : 767px) {
@@ -1879,15 +1898,15 @@ footer .block-socialnetwork li a.link-instagran {
   .modal-body {
     padding: 20px;
   }
-  #dog-detail .modal-content {
+  #pet-detail .modal-content {
     max-width: 400px;
   }
-  .dog-detail-left {
+  .pet-detail-left {
     float: none;
     margin-right: 0;
     width: 100%;
   }
-  .dog-detail-right {
+  .pet-detail-right {
     float: none;
     width: 100%;
   }
