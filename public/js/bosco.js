@@ -92,6 +92,7 @@ $(document).ready(function() {
           $('.report-detail-date').html(data.pet[0].report_date);
           $('.report-detail-hour').html(data.pet[0].report_hour);
           $('.report-detail-description').html(data.pet[0].report_description);
+          map.setCenter(new google.maps.LatLng(data.pet[0].location_latitude, data.pet[0].location_longitude));
         }
       }
     });
@@ -99,6 +100,7 @@ $(document).ready(function() {
 
 });
 
+var map;
 function initMap() {
   var map = new google.maps.Map(document.getElementById('pet-detail-map'), {
     center: {lat: -34.397, lng: 150.644},

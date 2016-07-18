@@ -63,7 +63,7 @@ class Pet extends Model
         
         if (!empty($result)) {
             foreach ($result as $row) {
-                $location = Location::where('id','=',$row->reports[0]->last_location_id)->select('address')->get();
+                $location = Location::where('id','=',$row->reports[0]->last_location_id)->select('address', 'latitude', 'longitude')->get();
                 $user = User::where('id','=',$row->owner_id)->select('id', 'name', 'last_name', 'phone', 'email')->get();
                 $data[] = [
                     'owner_name' => $user[0]->name . ' ' . $user[0]->last_name, 
