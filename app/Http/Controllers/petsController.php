@@ -34,7 +34,8 @@ class petsController extends Controller
   {
     if ($request->isMethod('get')){
       $id = $_GET['petid'];
-      $pet = Pet::getDataPet($id);
+      $status = $_GET['status'];
+      $pet = Pet::getDataPet($id, $status);
       return response()->json([
         'result' => TRUE, 
         'path' => url(''), 

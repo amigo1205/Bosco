@@ -76,7 +76,7 @@ $(document).ready(function() {
       url: window.location.origin + '/mascotas-detalle',
       dataType: 'json',
       cache: false,
-      data: { petid : $this.data('id') },
+      data: { petid : $this.data('id'), status : $this.data('status') },
       success: function(data) { 
         if (data.result) {
           $('.pet-detail-image').html('<img src="' + data.path + '/images/pets/' + data.pet[0].pet_image + '">');

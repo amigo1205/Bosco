@@ -35,11 +35,14 @@ class Pet extends Model
         return $this->belongsTo('App\User');
     }
 
-    public static function getDataPet($id)
+    public static function getDataPet($id, $status)
     {
         $data = [];
         
-        $result = pet::where('id','=',$id)
+        $result = Pet::where('id','=',$id)
+        ->whereHas('reports',function($query) use ($status){
+            $query->where('status','=',$status);
+        })
         ->with(
             [
                 'photos'=>function($queryPhoto){
@@ -48,7 +51,7 @@ class Pet extends Model
                 'user'=>function($queryUser){
                     $queryUser->select('id', 'name', 'last_name', 'phone', 'email');
                 }, 
-                'reports'=>function($queryReport){
+                'reports'=>function($queryReport) use ($status){
                     $queryReport->with(
                         [
                             'location'=>function($queryLocation){
@@ -56,7 +59,7 @@ class Pet extends Model
                             }
                         ]
                     );
-                    $queryReport->select('date', 'description', 'last_location_id', 'pet_id', 'reward');
+                    $queryReport->select('date', 'description', 'last_location_id', 'pet_id', 'reward', 'status');
                 }
             ]
         )->select('id', 'name', 'race', 'gender', 'description', 'owner_id')->get();
