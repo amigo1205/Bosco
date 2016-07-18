@@ -92,19 +92,19 @@ $(document).ready(function() {
           $('.report-detail-date').html(data.pet[0].report_date);
           $('.report-detail-hour').html(data.pet[0].report_hour);
           $('.report-detail-description').html(data.pet[0].report_description);
+          console.log(data.pet[0].location_latitude+','+ data.pet[0].location_longitude);
+          google.maps.event.trigger(map, 'resize');
           map.setCenter(new google.maps.LatLng(data.pet[0].location_latitude, data.pet[0].location_longitude));
         }
       }
     });
   });
-
 });
 
 var map;
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('pet-detail-map'), {
+  map = new google.maps.Map(document.getElementById('pet-detail-map'), {
     center: {lat: -34.397, lng: 150.644},
-    scrollwheel: false,
     zoom: 8
   });
 }
