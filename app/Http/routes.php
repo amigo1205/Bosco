@@ -23,5 +23,10 @@ Route::get('como-funciona', 'functioningController@index');
 Route::get('como-funciona/web', 'functioningController@getFunctioningWeb');
 Route::get('como-funciona/app', 'functioningController@getFunctioningApp');
 
-// Ajax
+// Ajax Get
 Route::get('mascotas-detalle', 'petsController@getPetsDetail');
+Route::get('mis-reportes-detalle-perdido', 'reportsController@getReportsDetailLost');
+Route::get('mis-reportes-detalle-encontrado', 'reportsController@getReportsDetailFound');
+
+// AJax Post
+Route::post('mis-reportes-registrar', 'reportsController@sendReport');

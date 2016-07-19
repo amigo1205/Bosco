@@ -54,8 +54,8 @@ $(document).ready(function() {
     format: "LT"
   });
 
-  var dogDetail = $('.gallery-item-hover');
-  dogDetail.on('click', function(e){
+  var petDetail = $('.gallery-item-hover');
+  petDetail.on('click', function(e){
     $('.pet-detail-image').html('');
     $('.pet-detail-location').html('');
     $('.owner-detail-name').html('');
@@ -79,26 +79,104 @@ $(document).ready(function() {
       data: { petid : $this.data('id'), status : $this.data('status') },
       success: function(data) { 
         if (data.result) {
-          $('.pet-detail-image').html('<img src="' + data.path + '/images/pets/' + data.pet[0].pet_image + '">');
-          $('.pet-detail-location').html(data.pet[0].location_address);
-          $('.owner-detail-name').html(data.pet[0].owner_name);
-          $('.owner-detail-phone').html(data.pet[0].owner_phone);
-          $('.owner-detail-email').html('<a href="mailto:' + data.pet[0].owner_email + '">' + data.pet[0].owner_email + '</a>');
-          $('.owner-detail-reward').html('S/.' + data.pet[0].owner_reward);
-          $('.pet-detail-name').html(data.pet[0].pet_name);
-          $('.pet-detail-race').html(data.pet[0].pet_race);
-          $('.pet-detail-gender').html(data.pet[0].pet_gender);
-          $('.pet-detail-description').html(data.pet[0].pet_description);
-          $('.report-detail-date').html(data.pet[0].report_date);
-          $('.report-detail-hour').html(data.pet[0].report_hour);
-          $('.report-detail-description').html(data.pet[0].report_description);
-          console.log(data.pet[0].location_latitude+','+ data.pet[0].location_longitude);
+          $('.pet-detail-image').html('<img src="' + data.path + '/images/pets/' + data.pet.pet_image + '">');
+          $('.pet-detail-location').html(data.pet.location_address);
+          $('.owner-detail-name').html(data.pet.owner_name);
+          $('.owner-detail-phone').html(data.pet.owner_phone);
+          $('.owner-detail-email').html('<a href="mailto:' + data.pet.owner_email + '">' + data.pet.owner_email + '</a>');
+          $('.owner-detail-reward').html('S/.' + data.pet.owner_reward);
+          $('.pet-detail-name').html(data.pet.pet_name);
+          $('.pet-detail-race').html(data.pet.pet_race);
+          $('.pet-detail-gender').html(data.pet.pet_gender);
+          $('.pet-detail-description').html(data.pet.pet_description);
+          $('.report-detail-date').html(data.pet.report_date);
+          $('.report-detail-hour').html(data.pet.report_hour);
+          $('.report-detail-description').html(data.pet.report_description);
+          console.log(data.pet.location_latitude+','+ data.pet.location_longitude);
           google.maps.event.trigger(map, 'resize');
-          map.setCenter(new google.maps.LatLng(data.pet[0].location_latitude, data.pet[0].location_longitude));
+          map.setCenter(new google.maps.LatLng(data.pet.location_latitude, data.pet.location_longitude));
         }
       }
     });
   });
+
+  var reportDetailLost = $('.report-detail-lost');
+  reportDetailLost.on('click', function(e){
+    $('.report-detail-lost-image').html('');
+    $('.report-detail-lost-address').html('');
+    $('.report-detail-lost-phone').html('');
+    $('.report-detail-lost-name').html('');
+    $('.report-detail-lost-race').html('');
+    $('.report-detail-lost-gender').html('');
+    $('.report-detail-lost-date').html('');
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "GET",
+      url: window.location.origin + '/mis-reportes-detalle-perdido',
+      dataType: 'json',
+      cache: false,
+      data: { reportid : $this.data('id') },
+      success: function(data) { 
+        if (data.result) {
+          $('.report-detail-lost-image').html('<img src="' + data.path + '/images/pets/' + data.pet.image + '">');
+          $('.report-detail-lost-address').html(data.pet.address);
+          $('.report-detail-lost-phone').html('<a class="report-phone" href="tel:' + data.pet.phone + '">' + data.pet.phone + '</a>');
+          $('.report-detail-lost-name').html(data.pet.name);
+          $('.report-detail-lost-race').html(data.pet.race);
+          $('.report-detail-lost-gender').html(data.pet.gender);
+          $('.report-detail-lost-date').html(data.pet.date);
+        }
+      }
+    });
+  });
+
+  var reportDetailFound = $('.report-detail-found');
+  reportDetailFound.on('click', function(e){
+    $('.report-detail-found-image').html('');
+    $('.report-detail-found-address').html('');
+    $('.report-detail-found-phone').html('');
+    $('.report-detail-found-date').html('');
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "GET",
+      url: window.location.origin + '/mis-reportes-detalle-encontrado',
+      dataType: 'json',
+      cache: false,
+      data: { reportid : $this.data('id') },
+      success: function(data) { 
+        if (data.result) {
+          $('.report-detail-found-image').html('<img src="' + data.path + '/images/pets/' + data.pet.image + '">');
+          $('.report-detail-found-address').html(data.pet.address);
+          $('.report-detail-found-phone').html('<a class="report-phone" href="tel:' + data.pet.phone + '">' + data.pet.phone + '</a>');
+          $('.report-detail-found-date').html(data.pet.date);
+        }
+      }
+    });
+  });
+
+  var submitReport = $('#form-report');
+
+  submitReport.on('submit', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "POST",
+      url: 'mis-reportes-registrar',
+      dataType: 'json',
+      cache: false,
+      data: $('#form-report').serialize(),
+      success: function(data) {
+        if (data.result) {
+          $('#form-report').each(function(){
+            this.reset();
+          });
+        }
+      }
+    });
+  });
+
 });
 
 var map;

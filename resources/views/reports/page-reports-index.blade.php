@@ -31,7 +31,7 @@
                   </div>
                 </div>
                 <div class="report-buttons">
-                  <a data-toggle="modal" href="#report-detail-lost" class="btn btn-primary btn-block">Generar volante</a>
+                  <a data-toggle="modal" href="#report-detail-lost" class="btn btn-primary btn-block report-detail-lost" data-id="{{ $item['id'] }}">Generar volante</a>
                   <a data-toggle="modal" href="#" class="btn btn-primary btn-green btn-block">Encontrado</a>
                 </div>
               </li>
@@ -62,7 +62,7 @@
                   </div>
                 </div>
                 <div class="report-buttons">
-                  <a data-toggle="modal" href="#report-detail-founds" class="btn btn-primary btn-block">Generar volante</a>
+                  <a data-toggle="modal" href="#report-detail-founds" class="btn btn-primary btn-block report-detail-found" data-id="{{ $item['id'] }}">Generar volante</a>
                 </div>
               </li>
               @endforeach

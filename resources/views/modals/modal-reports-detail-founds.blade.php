@@ -7,12 +7,16 @@
           <div class="modal-report-title">
             <h3>Encontrado</h3>
           </div>
-          <img src="{{ asset('images/report_detail_image.png') }}">
-          <a class="report-phone" href="tel:969 003 009">969 003 009</a>
+          <span class="report-detail-found-image">
+            <img src="{{ asset('images/report_detail_image.png') }}">
+          </span>
+          <span class="report-detail-found-phone">
+            <a class="report-phone" href="tel:969 003 009">969 003 009</a>
+          </span>
         </div>
         <div class="modal-report-detail-data clearfix">
-          <p class="report-data-birthday">06 Febrero 2016</p>
-          <p class="report-data-location">Las coapibas, La Molina.</p>
+          <p class="report-data-birthday report-detail-found-date">06 Febrero 2016</p>
+          <p class="report-data-location report-detail-found-address">Las coapibas, La Molina.</p>
         </div>
         <div class="modal-report-detail-footer">
           <div class="logo-gray"></div>

@@ -77,4 +77,50 @@ class Report extends Model
 
         return ['data' => $data, 'paginate' => $paginate];
     }
+
+    public static function getDataReport($id, $status)
+    {
+        $data = [];
+        
+        $result = Report::with(
+            [
+                'location'=>function($queryLocation){
+                    $queryLocation->select('id', 'address');
+                },
+                'pet'=>function($queryPet){
+                    $queryPet->with(
+                        [
+                            'photos'=>function($queryPhoto){
+                                $queryPhoto->select('url', 'pet_id');
+                            }, 
+                            'user'=>function($queryUser){
+                                $queryUser->select('id', 'phone');
+                            }
+                        ]
+                    )->select('id', 'owner_id', 'name', 'gender', 'race');
+                }
+            ]
+        )
+        ->where('id', '=', $id)
+        ->select('id', 'pet_id', 'last_location_id', 'status', 'date')
+        ->get();
+
+        if (!empty($result)) {
+            $row = $result[0];
+            $location = Location::where('id','=',$row->last_location_id)->select('address')->get();
+            $user = User::where('id','=',$row->pet->owner_id)->select('phone')->get();
+            $data = [
+                'id' => $row->id, 
+                'phone' => $user[0]->phone, 
+                'date' => date('d m Y', strtotime($row->date)), 
+                'address' => $location[0]->address, 
+                'image' => $row->pet->photos[0]->url
+            ];
+            if ($status == 'lost') $data['name'] = $row->pet->name;
+            if ($status == 'lost') $data['gender'] = $row->pet->gender;
+            if ($status == 'lost') $data['race'] = $row->pet->race; 
+        }
+
+        return $data;
+    }
 }

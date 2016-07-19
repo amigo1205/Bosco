@@ -8,18 +8,22 @@
             <h3>Perdido</h3>
             <div class="modal-report-data">
               <ul class="text-center">
-                <li>Nombre: Lara</li>
-                <li>Género: Femenino</li>
-                <li class="last">Raza: Pastor alemán</li>
+                <li>Nombre: <span class="report-detail-lost-name">Lara</span></li>
+                <li>Género: <span class="report-detail-lost-gender">Femenino</span></li>
+                <li class="last">Raza: <span class="report-detail-lost-race">Pastor alemán</span></li>
               </ul>
             </div>
           </div>
-          <img src="{{ asset('images/report_detail_image.png') }}">
-          <a class="report-phone" href="tel:969 003 009">969 003 009</a>
+          <span class="report-detail-lost-image">
+            <img src="{{ asset('images/report_detail_image.png') }}">
+          </span>
+          <span class="report-detail-lost-phone">
+            <a class="report-phone" href="tel:969 003 009">969 003 009</a>
+          </span>
         </div>
         <div class="modal-report-detail-data clearfix">
-          <p class="report-data-birthday">06 Febrero 2016</p>
-          <p class="report-data-location">Las coapibas, La Molina.</p>
+          <p class="report-data-birthday report-detail-lost-date">06 Febrero 2016</p>
+          <p class="report-data-location report-detail-lost-address">Las coapibas, La Molina.</p>
         </div>
         <div class="modal-report-detail-footer">
           <div class="logo-gray"></div>
