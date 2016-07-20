@@ -23,7 +23,7 @@
           </select>
         </div>
         <div class="form-group form-actions">
-          <input type="submit" class="btn btn-primary" value="Buscar">
+          <input type="submit" class="btn btn-primary btn-search" value="Buscar">
         </div>
         <div class="form-group form-actions pull-right">
           <a href="{{ url('mis-reportes') }}" class="btn btn-primary">Reportar</a>

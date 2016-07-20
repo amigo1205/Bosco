@@ -163,6 +163,11 @@ h3.title {
   background: #093042;
 }
 
+.btn-search {
+  background: #24CF5F !important;
+  border: 1px solid #1AA344 !important;
+}
+
 /* Header Top */
 
 .header-top {
