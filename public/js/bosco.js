@@ -13,7 +13,7 @@ $(document).ready(function() {
     var tab = $(this).data('tab');
     $('#form-report-lost .modal-form-report-menu li span').removeClass('tab-on');
     $(this).addClass('tab-on');
-    $('#form-report-lost .modal-form-report form').addClass('hide');
+    $('#form-report-lost .modal-form-report .form-report-lost-tab').addClass('hide');
     $('#form-report-lost-' + tab).removeClass('hide');
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
     var tab = $(this).data('tab');
     $('#form-report-lost .modal-form-report-menu li span').removeClass('tab-on');
     $('#form-report-lost .modal-form-report-menu li span#' + tab).addClass('tab-on');
-    $('#form-report-lost .modal-form-report form').addClass('hide');
+    $('#form-report-lost .modal-form-report .form-report-lost-tab').addClass('hide');
     $('#form-report-lost-' + tab).removeClass('hide');
   });
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
     var tab = $(this).data('tab');
     $('#form-report-founds .modal-form-report-menu li span').removeClass('tab-on');
     $(this).addClass('tab-on');
-    $('#form-report-founds .modal-form-report form').addClass('hide');
+    $('#form-report-founds .modal-form-report .form-report-founds-tab').addClass('hide');
     $('#form-report-founds-' + tab).removeClass('hide');
   });
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
     var tab = $(this).data('tab');
     $('#form-report-founds .modal-form-report-menu li span').removeClass('tab-on');
     $('#form-report-founds .modal-form-report-menu li span#' + tab).addClass('tab-on');
-    $('#form-report-founds .modal-form-report form').addClass('hide');
+    $('#form-report-founds .modal-form-report .form-report-founds-tab').addClass('hide');
     $('#form-report-founds-' + tab).removeClass('hide');
   });
 
@@ -100,6 +100,42 @@ $(document).ready(function() {
     });
   });
 
+  var locationsCountry = $('#locations-country');
+  locationsCountry.on('change', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "GET",
+      url: window.location.origin + '/locacion-ciudades',
+      dataType: 'json',
+      cache: false,
+      data: { countryid : $this.val() },
+      success: function(data) { 
+        if (data.result) {
+          $('#locations-city').html(data.cities).fadeIn();
+        }
+      }
+    });
+  });
+
+  var locationsCity = $('#locations-city');
+  locationsCity.on('change', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "GET",
+      url: window.location.origin + '/locacion-distritos',
+      dataType: 'json',
+      cache: false,
+      data: { cityid : $this.val() },
+      success: function(data) { 
+        if (data.result) {
+          $('#locations-district').html(data.districts).fadeIn();
+        }
+      }
+    });
+  });
+
   var reportDetailLost = $('.report-detail-lost');
   reportDetailLost.on('click', function(e){
     $('.report-detail-lost-image').html('');
@@ -156,20 +192,19 @@ $(document).ready(function() {
     });
   });
 
-  var submitReport = $('#form-report');
-
-  submitReport.on('submit', function(e){
+  var submitReport = $('.btn-submit-report');
+  submitReport.on('click', function(e){
     e.preventDefault();
     var $this = $(this);
     $.ajax({
       type: "POST",
-      url: 'mis-reportes-registrar',
+      url: window.location.origin + '/mis-reportes-registrar',
       dataType: 'json',
       cache: false,
-      data: $('#form-report').serialize(),
+      data: $('#form-report-lost').serialize(),
       success: function(data) {
         if (data.result) {
-          $('#form-report').each(function(){
+          $('#form-report-lost').each(function(){
             this.reset();
           });
         }

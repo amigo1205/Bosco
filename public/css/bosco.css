@@ -301,10 +301,6 @@ h3.title {
   width: 200px;
 }
 
-.block-filters .form-actions {
-  float: right;
-}
-
 .block-filters .form-actions a, 
 input[type="submit"] {
   border: 1px solid #E63A38;

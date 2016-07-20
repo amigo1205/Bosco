@@ -23,10 +23,16 @@ Route::get('como-funciona', 'functioningController@index');
 Route::get('como-funciona/web', 'functioningController@getFunctioningWeb');
 Route::get('como-funciona/app', 'functioningController@getFunctioningApp');
 
-// Ajax Get
+// Ajax Pet
 Route::get('mascotas-detalle', 'petsController@getPetsDetail');
+
+// Ajax Reports
 Route::get('mis-reportes-detalle-perdido', 'reportsController@getReportsDetailLost');
 Route::get('mis-reportes-detalle-encontrado', 'reportsController@getReportsDetailFound');
 
-// AJax Post
-Route::post('mis-reportes-registrar', 'reportsController@sendReport');
+// Ajax Locations
+Route::get('locacion-ciudades', 'locationsController@getLocationsCity');
+Route::get('locacion-distritos', 'locationsController@getLocationsDistrict');
+
+// AJax Send ReportPost
+Route::get('mis-reportes-registrar', 'reportsController@sendReport');
