@@ -16,6 +16,7 @@
     <script type="text/javascript" src="{{ asset('js/moment-with-locales.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-filestyle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bosco.js') }}"></script>
   </head>
   <body>

@@ -288,6 +288,14 @@ h3.title {
   width: 31px;
 }
 
+#form-pets-filters select.error {
+  border: 1px solid #ff0000;
+}
+
+#form-pets-filters label.error {
+  display: none !important;
+}
+
 .block-filters .form-group {
   margin: 0 5px;
 }

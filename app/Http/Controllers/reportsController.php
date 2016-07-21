@@ -11,8 +11,8 @@ class reportsController extends Controller
 {
 	public function index()
 	{
-    $reports['lost'] = Report::getDataReports('lost', 2, FALSE);
-    $reports['founds'] = Report::getDataReports('found', 2, FALSE);
+    $reports['lost'] = Report::getDataReports(array('status' => 'lost', 'userid' => 2), FALSE);
+    $reports['founds'] = Report::getDataReports(array('status' => 'found', 'userid' => 2), FALSE);
     return view('reports.page-reports-index', 
       [
         'reports' => $reports

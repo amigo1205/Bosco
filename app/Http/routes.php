@@ -30,9 +30,9 @@ Route::get('mascotas-detalle', 'petsController@getPetsDetail');
 Route::get('mis-reportes-detalle-perdido', 'reportsController@getReportsDetailLost');
 Route::get('mis-reportes-detalle-encontrado', 'reportsController@getReportsDetailFound');
 
-// Ajax Locations
-Route::get('locacion-ciudades', 'locationsController@getLocationsCity');
-Route::get('locacion-distritos', 'locationsController@getLocationsDistrict');
+// Ajax Ubigeo
+Route::get('ubigeo-ciudades', 'ubigeoController@getUbigeoCity');
+Route::get('ubigeo-distritos', 'ubigeoController@getUbigeoDistrict');
 
 // AJax Send ReportPost
 Route::get('mis-reportes-registrar', 'reportsController@sendReport');

@@ -3,23 +3,20 @@
   <div class="block-filters clearfix">
     <div class="col-lg-12 col-md-12">
       <div class="filter-image"></div>
-      <form class="form-inline" action="" method="get">
+      <form id="form-pets-filters" class="form-inline" action="" method="get">
         <div class="form-group">
-          <select id="locations-country" class="form-control">
-            <option value="" default>País</option>
-            <option value="1">Perú</option>
-            <option value="2">Argentina</option>
-            <option value="3">Uruguay</option>
+          <select id="ubigeo-department" class="form-control" name="department" required>
+            <?php echo $optionDepartments; ?>
           </select>
         </div>
         <div class="form-group">
-          <select id="locations-city" class="form-control">
-            <option default>Ciudad</option>
+          <select id="ubigeo-city" class="form-control" name="city" required>
+            <option value="" default>Ciudad</option>
           </select>
         </div>
         <div class="form-group">
-          <select id="locations-district" class="form-control">
-            <option default>Distrito</option>
+          <select id="ubigeo-district" class="form-control" name="district" required>
+            <option value="" default>Distrito</option>
           </select>
         </div>
         <div class="form-group form-actions">

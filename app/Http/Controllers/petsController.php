@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pet;
+use App\Ubigeo;
 use App\Report;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -10,11 +11,31 @@ use Illuminate\Http\Request;
 
 class petsController extends Controller
 {
-	public function getPetsLost()
+	public function getPetsLost(Request $request)
 	{
-    $reports = Report::getDataReports('lost', FALSE, TRUE, 10, 'mascotas/perdidos');
+    $ubigeoId = FALSE;
+    if ($request->isMethod('get')){
+      if ($request->get('district')) {
+        $ubigeoId = $request->get('district');
+      }
+    }
+    $optionDepartments = FALSE;
+    $departments = Ubigeo::getDataDepartments();
+    if (!empty($departments)) {
+      $optionDepartments = '<option value="" default="">Departamento</option>' . "\n";
+      foreach ($departments as $key => $value) {
+        $optionDepartments .= '<option value="' . $key . '">' . $value . '</option>' . "\n";
+      }
+    }
+    $parameters = array(
+      'status' => 'lost', 
+      'userid' => FALSE
+    );
+    if ($ubigeoId) $parameters['ubigeoid'] = $ubigeoId;
+    $reports = Report::getDataReports($parameters, TRUE, 10, 'mascotas/perdidos');
 		return view('pets.page-pets-lost', 
       [
+        'optionDepartments' => $optionDepartments, 
         'reports' => $reports
       ]
     );
@@ -22,9 +43,29 @@ class petsController extends Controller
 
   public function getPetsFound()
   {
-    $reports = Report::getDataReports('found', FALSE, TRUE, 10, 'mascotas/perdidos');
+    $ubigeoId = FALSE;
+    if ($request->isMethod('get')){
+      if ($request->get('district')) {
+        $ubigeoId = $request->get('district');
+      }
+    }
+    $optionDepartments = FALSE;
+    $departments = Ubigeo::getDataDepartments();
+    if (!empty($departments)) {
+      $optionDepartments = '<option value="" default="">Departamento</option>' . "\n";
+      foreach ($departments as $key => $value) {
+        $optionDepartments .= '<option value="' . $key . '">' . $value . '</option>' . "\n";
+      }
+    }
+    $parameters = array(
+      'status' => 'found', 
+      'userid' => FALSE
+    );
+    if ($ubigeoId) $parameters['ubigeoid'] = $ubigeoId;
+    $reports = Report::getDataReports($parameters, TRUE, 10, 'mascotas/perdidos');
     return view('pets.page-pets-founds', 
       [
+        'optionDepartments' => $optionDepartments, 
         'reports' => $reports
       ]
     );

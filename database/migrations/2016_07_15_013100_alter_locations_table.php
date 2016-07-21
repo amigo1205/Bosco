@@ -14,6 +14,8 @@ class AlterLocationsTable extends Migration
     {
         Schema::table('locations', function (Blueprint $table) {
             $table->foreign('parent_id')->references('id')->on('locations');
+            $table->integer('ubigeo_id')->unsigned()->nullable();
+            $table->foreign('ubigeo_id')->references('id')->on('ubigeo');
         });
     }
 

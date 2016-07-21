@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $('#form-pets-filters').validate();
+
   $('.check-on').click(function() {
     $(this).addClass('hide');
     $(this).parent().children('.check-off').removeClass('hide');
@@ -100,37 +102,41 @@ $(document).ready(function() {
     });
   });
 
-  var locationsCountry = $('#locations-country');
+  var locationsCountry = $('#ubigeo-department');
   locationsCountry.on('change', function(e){
     e.preventDefault();
     var $this = $(this);
     $.ajax({
       type: "GET",
-      url: window.location.origin + '/locacion-ciudades',
+      url: window.location.origin + '/ubigeo-ciudades',
       dataType: 'json',
       cache: false,
-      data: { countryid : $this.val() },
+      data: { departmentid : $this.val() },
       success: function(data) { 
         if (data.result) {
-          $('#locations-city').html(data.cities).fadeIn();
+          $('#ubigeo-city').html(data.options).fadeIn();
+          $('#ubigeo-district').html('<option value="" default="">Distrito</option>').fadeIn();
+          $('#ubigeo-city').addClass('error');
+          $('#ubigeo-district').addClass('error');
         }
       }
     });
   });
 
-  var locationsCity = $('#locations-city');
+  var locationsCity = $('#ubigeo-city');
   locationsCity.on('change', function(e){
     e.preventDefault();
     var $this = $(this);
     $.ajax({
       type: "GET",
-      url: window.location.origin + '/locacion-distritos',
+      url: window.location.origin + '/ubigeo-distritos',
       dataType: 'json',
       cache: false,
       data: { cityid : $this.val() },
       success: function(data) { 
         if (data.result) {
-          $('#locations-district').html(data.districts).fadeIn();
+          $('#ubigeo-district').html(data.options).fadeIn();
+          $('#ubigeo-district').addClass('error');
         }
       }
     });

@@ -24,4 +24,9 @@ class Location extends Model
     {
         return $this->hasMany('App\Report');
     }
+
+    public function ubigeo()
+    {
+        return $this->belongsTo('App\Ubigeo');
+    }
 }

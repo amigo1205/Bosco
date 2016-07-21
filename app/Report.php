@@ -17,7 +17,7 @@ class Report extends Model
 
     public function location()
     {
-        return $this->belongsTo('App\Location');
+        return $this->belongsTo('App\Location','last_location_id');
     }
 
     public function pet()
@@ -25,10 +25,13 @@ class Report extends Model
         return $this->belongsTo('App\Pet');
     }
 
-    public static function getDataReports($status = FALSE, $userId = FALSE, $paginate = FALSE, $numPerItem = 10, $path = 'mascotas/perdidos')
+    public static function getDataReports($parameters = array(), $paginate = FALSE, $numPerItem = 10, $path = 'mascotas/perdidos')
     {
         $data = [];
-        
+        $status = (isset($parameters['status'])) ? $parameters['status'] : FALSE;
+        $userId = (isset($parameters['userid'])) ? $parameters['userid'] : FALSE;
+        $ubigeoId = (isset($parameters['ubigeoid'])) ? $parameters['ubigeoid'] : FALSE;
+
         $result = Report::with(
             [
                 'location'=>function($queryLocation){
@@ -48,8 +51,14 @@ class Report extends Model
                     )->select('id', 'owner_id', 'name', 'description');
                 }
             ]
-        )->select('pet_id', 'last_location_id', 'status', 'date');
+        )
+        ->select('pet_id', 'last_location_id', 'status', 'date');
         
+        if ($ubigeoId) {
+            $result->whereHas('location',function($query) use ($ubigeoId){
+                $query->where('ubigeo_id','=',$ubigeoId);
+            });
+        }
         if ($status) $result->where('status', '=', $status);
         if ($paginate) {
             $result = $result->paginate($numPerItem);
@@ -62,13 +71,11 @@ class Report extends Model
 
         if (!empty($result)) {
             foreach ($result as $row) {
-                $location = Location::where('id','=',$row->last_location_id)->select('address')->get();
                 $data[] = [
                     'id' => $row->pet->id, 
                     'name' => $row->pet->name, 
                     'date' => date('d m Y', strtotime($row->date)), 
-                    //'address' => $row->location->address, 
-                    'address' => $location[0]->address, 
+                    'address' => $row->location->address, 
                     'description' => $row->pet->description, 
                     'image' => $row->pet->photos[0]->url
                 ];
