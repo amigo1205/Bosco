@@ -26,14 +26,14 @@
     // Ajax Pet
     Route::get('mascotas-detalle', 'PetsController@getPetsDetail');
 
-    Route::group(['middleware' => ['auth']], function () {
+    //Route::group(['middleware' => ['auth']], function () {
         Route::get('mis-reportes', 'ReportsController@index');
         // Ajax Reports
         Route::get('mis-reportes-detalle-perdido', 'ReportsController@getReportsDetailLost');
         Route::get('mis-reportes-detalle-encontrado', 'ReportsController@getReportsDetailFound');
         // AJax Send ReportPost
         Route::get('mis-reportes-registrar', 'ReportsController@sendReport');
-    });
+    //});
 
     // Ajax Ubigeo
     Route::get('ubigeo-ciudades', 'UbigeoController@getUbigeoCity');
