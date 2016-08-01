@@ -2,43 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d917e873-488f-4253-8f4a-0119fcc3c8ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-subscription.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/ViewComposers/MenuComposer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/es/bosco.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/blocks/block-subscription.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/blocks/block-suscription.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/functioningController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServicesController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/petsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetsController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/reportsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportsController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/ubigeoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UbigeoController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/blocks/block-header.blade.php" afterPath="$PROJECT_DIR$/resources/views/blocks/block-menu.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/functioning/page-functioning-app.blade.php" afterPath="$PROJECT_DIR$/resources/views/services/page-functioning-app.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/functioning/page-functioning-index.blade.php" afterPath="$PROJECT_DIR$/resources/views/services/page-functioning-index.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/functioning/page-functioning-web.blade.php" afterPath="$PROJECT_DIR$/resources/views/services/page-functioning-web.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Pet.php" afterPath="$PROJECT_DIR$/app/Pet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Report.php" afterPath="$PROJECT_DIR$/app/Report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/autoload.php" afterPath="$PROJECT_DIR$/bootstrap/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.php" afterPath="$PROJECT_DIR$/config/services.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bosco.css" afterPath="$PROJECT_DIR$/public/css/bosco.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bosco.js" afterPath="$PROJECT_DIR$/public/js/bosco.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blocks/block-filters.blade.php" afterPath="$PROJECT_DIR$/resources/views/blocks/block-filters.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/general/page-index.blade.php" afterPath="$PROJECT_DIR$/resources/views/general/page-index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modals/modal-form-user.blade.php" afterPath="$PROJECT_DIR$/resources/views/modals/modal-form-user.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modals/modal-pets-detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/modals/modal-pets-detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pets/page-pets-founds.blade.php" afterPath="$PROJECT_DIR$/resources/views/pets/page-pets-founds.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pets/page-pets-lost.blade.php" afterPath="$PROJECT_DIR$/resources/views/pets/page-pets-lost.blade.php" />
     </list>
     <ignored path="bosco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
@@ -109,8 +75,18 @@
       <file leaf-file-name="services.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+            <state relative-caret-position="381">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="54" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -191,8 +167,9 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/modals/modal-form-user.blade.php" />
-        <option value="$PROJECT_DIR$/config/services.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/config/services.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -636,12 +613,12 @@
       <updated>1468340712818</updated>
       <workItem from="1468340716462" duration="212000" />
       <workItem from="1468596546033" duration="5455000" />
-      <workItem from="1469918525172" duration="30256000" />
+      <workItem from="1469918525172" duration="30608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35923000" />
+    <option name="totallyTimeSpent" value="36275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
@@ -682,16 +659,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blocks/block-subscription.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1073,14 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1107,6 +1066,22 @@
           <folding>
             <element signature="e#45#80#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
