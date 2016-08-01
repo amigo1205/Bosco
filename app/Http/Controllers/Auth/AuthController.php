@@ -86,7 +86,7 @@ class AuthController extends Controller
 
             if($user_fb->getEmail()==''){ throw new Exception('email'); }
             $user = User::where('email',$user_fb->getEmail())->first();
-            if(empty($user)){
+            if(empty($user->id)){
                 $user = User::create([
                     'name' => $user_fb->user['first_name'],
                     'last_name' => $user_fb->user['last_name'],
