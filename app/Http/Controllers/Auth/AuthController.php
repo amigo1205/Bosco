@@ -70,7 +70,11 @@ class AuthController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->fields([
+            'first_name', 'last_name', 'email', 'gender'
+        ])->scopes([
+            'email'
+        ])->redirect();
     }
 
     /**
@@ -81,31 +85,27 @@ class AuthController extends Controller
      */
     public function handleProviderCallback(Request $request)
     {
-        try{
-            $user_fb = $this->validateProvider('facebook');
-            if($user_fb->getEmail()==''){ throw new Exception('email'); }
-            $user = User::where('email',$user_fb->getEmail())->first();
-            if(empty($user->id)){
-                $user = User::create([
-                    'name' => $user_fb->user['first_name'],
-                    'last_name' => $user_fb->user['last_name'],
-                    'email' => $user_fb->getEmail(),
-                    'password' => bcrypt(''),
-                ]);
-            }
-            Auth::login($user);
-            $url = 'mis-reportes';
-        }catch (Exception $e){
-            $url = 'mascotas';
+        $user_fb = $this->validateProvider('facebook');
+        if($user_fb->getEmail()==''){ throw new Exception('email'); }
+        $user = User::where('email',$user_fb->getEmail())->first();
+        if(empty($user->id)){
+            dd($user_fb->user);
+            $user = User::create([
+                'name' => $user_fb->user['first_name'],
+                'last_name' => $user_fb->user['last_name'],
+                'email' => $user_fb->getEmail(),
+                'password' => bcrypt(''),
+            ]);
         }
-        return response()->redirectTo($url);
+        Auth::login($user);
+        return response()->redirectTo('mis-reportes');
     }
 
     public function validateProvider($provider){
-        try {
+        //try {
             $user = Socialite::driver($provider)->user();
             $user->provider = $provider;
-        } catch(\InvalidArgumentException $e){
+        /*} catch(\InvalidArgumentException $e){
             //tw cancel permission
             return response()->redirectTo('mascotas');
         } catch(\OAuthException $e){
@@ -113,7 +113,7 @@ class AuthController extends Controller
             return response()->redirectTo('mascotas');
         } catch (\Exception $e) {
             return response()->redirectTo('mascotas');
-        }
+        }*/
         return $user;
     }
 }
