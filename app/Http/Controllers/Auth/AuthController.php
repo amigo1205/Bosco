@@ -99,7 +99,7 @@ class AuthController extends Controller
         }catch (Exception $e){
             $url = 'mascotas';
         }
-        dd($url);
+        dd($user);
         //return response()->redirectTo($url);
     }
 
