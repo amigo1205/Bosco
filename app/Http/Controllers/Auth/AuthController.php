@@ -86,6 +86,13 @@ class AuthController extends Controller
 
             if($user_fb->getEmail()==''){ throw new Exception('email'); }
             $user = User::where('email',$user_fb->getEmail())->first();
+            if(empty($user)){
+                User::create([
+                    'name' => $user_fb->getName(),
+                    'email' => $user_fb->getEmail(),
+                    'password' => bcrypt(''),
+                ]);
+            }
             Auth::login($user);
             $url = 'mis-reportes';
         }catch (Exception $e){
