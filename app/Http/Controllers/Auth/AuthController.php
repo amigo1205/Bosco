@@ -88,7 +88,8 @@ class AuthController extends Controller
             $user = User::where('email',$user_fb->getEmail())->first();
             if(empty($user)){
                 $user = User::create([
-                    'name' => $user_fb->getName(),
+                    'name' => $user_fb->user['first_name'],
+                    'last_name' => $user_fb->user['last_name'],
                     'email' => $user_fb->getEmail(),
                     'password' => bcrypt(''),
                 ]);
