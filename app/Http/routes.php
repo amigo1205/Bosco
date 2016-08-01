@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'IndexController@index');
     Route::get('terminos-y-condiciones', 'IndexController@getTermsConditions');
     Route::get('ayuda', 'IndexController@getHelp');
@@ -26,14 +26,14 @@
     // Ajax Pet
     Route::get('mascotas-detalle', 'PetsController@getPetsDetail');
 
-    //Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['auth']], function () {
         Route::get('mis-reportes', 'ReportsController@index');
         // Ajax Reports
         Route::get('mis-reportes-detalle-perdido', 'ReportsController@getReportsDetailLost');
         Route::get('mis-reportes-detalle-encontrado', 'ReportsController@getReportsDetailFound');
         // AJax Send ReportPost
         Route::get('mis-reportes-registrar', 'ReportsController@sendReport');
-    //});
+    });
 
     // Ajax Ubigeo
     Route::get('ubigeo-ciudades', 'UbigeoController@getUbigeoCity');
@@ -45,3 +45,4 @@
     Route::get('cerrar-sesion','Auth\AuthController@logout');
     Route::get('iniciar-sesion/fb', 'Auth\AuthController@redirectToProvider');
     Route::get('iniciar-sesion/fb/callback', 'Auth\AuthController@handleProviderCallback');
+});
