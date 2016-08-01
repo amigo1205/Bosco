@@ -89,10 +89,10 @@ class AuthController extends Controller
         if($user_fb->getEmail()==''){ throw new Exception('email'); }
         $user = User::where('email',$user_fb->getEmail())->first();
         if(empty($user->id)){
-            dd($user_fb->user);
+
             $user = User::create([
-                'name' => $user_fb->user['first_name'],
-                'last_name' => $user_fb->user['last_name'],
+                'name' => $user_fb['first_name'],
+                'last_name' => $user_fb['last_name'],
                 'email' => $user_fb->getEmail(),
                 'password' => bcrypt(''),
             ]);
@@ -102,10 +102,12 @@ class AuthController extends Controller
     }
 
     public function validateProvider($provider){
-        //try {
-            $user = Socialite::driver($provider)->user();
+        try {
+            $user = Socialite::driver($provider)->fields([
+                'first_name', 'last_name', 'email', 'gender'
+            ])->user();
             $user->provider = $provider;
-        /*} catch(\InvalidArgumentException $e){
+        } catch(\InvalidArgumentException $e){
             //tw cancel permission
             return response()->redirectTo('mascotas');
         } catch(\OAuthException $e){
@@ -113,7 +115,7 @@ class AuthController extends Controller
             return response()->redirectTo('mascotas');
         } catch (\Exception $e) {
             return response()->redirectTo('mascotas');
-        }*/
+        }
         return $user;
     }
 }
