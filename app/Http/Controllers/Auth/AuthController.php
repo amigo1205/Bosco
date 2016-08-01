@@ -87,7 +87,7 @@ class AuthController extends Controller
             if($user_fb->getEmail()==''){ throw new Exception('email'); }
             $user = User::where('email',$user_fb->getEmail())->first();
             if(empty($user)){
-                User::create([
+                $user = User::create([
                     'name' => $user_fb->getName(),
                     'email' => $user_fb->getEmail(),
                     'password' => bcrypt(''),
@@ -98,7 +98,7 @@ class AuthController extends Controller
         }catch (Exception $e){
             $url = 'mascotas';
         }
-        //return response()->redirectTo($url);
+        return response()->redirectTo($url);
     }
 
     public function validateProvider($provider){
