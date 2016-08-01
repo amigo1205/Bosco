@@ -83,7 +83,7 @@ class AuthController extends Controller
     {
         try{
             $user_fb = $this->validateProvider('facebook');
-
+            dd($user_fb);
             if($user_fb->getEmail()==''){ throw new Exception('email'); }
             $user = User::where('email',$user_fb->getEmail())->first();
             if(empty($user->id)){
@@ -99,8 +99,6 @@ class AuthController extends Controller
         }catch (Exception $e){
             $url = 'mascotas';
         }
-        print_r($user_fb->getEmail());
-        print_r(Auth::user());
         //return response()->redirectTo($url);
     }
 
