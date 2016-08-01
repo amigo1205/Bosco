@@ -99,7 +99,7 @@ class AuthController extends Controller
         }catch (Exception $e){
             $url = 'mascotas';
         }
-        print_r($user_fb);
+        print_r($user_fb->getEmail());
         print_r(Auth::user());
         //return response()->redirectTo($url);
     }
