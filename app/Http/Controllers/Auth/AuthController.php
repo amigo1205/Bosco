@@ -99,7 +99,8 @@ class AuthController extends Controller
         }catch (Exception $e){
             $url = 'mascotas';
         }
-        return response()->redirectTo($url);
+        dd($url);
+        //return response()->redirectTo($url);
     }
 
     public function validateProvider($provider){
