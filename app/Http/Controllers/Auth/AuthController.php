@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegisterRequest;
-use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-use Mockery\CountValidator\Exception;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
+use Exception;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -84,7 +82,8 @@ class AuthController extends Controller
     public function handleProviderCallback(Request $request)
     {
         try{
-            $user_fb = Socialite::driver('facebook')->user();
+            $user_fb = $this->validateProvider('facebook');
+
             if($user_fb->getEmail()==''){ throw new Exception('email'); }
             $user = User::where('email',$user_fb->getEmail())->first();
             Auth::login($user);
@@ -93,5 +92,21 @@ class AuthController extends Controller
             $url = 'mascotas';
         }
         return response()->redirectTo($url);
+    }
+
+    public function validateProvider($provider){
+        try {
+            $user = Socialite::driver($provider)->user();
+            $user->provider = $provider;
+        } catch(\InvalidArgumentException $e){
+            //tw cancel permission
+            return response()->redirectTo('mascotas');
+        } catch(\OAuthException $e){
+            //fb cancel login
+            return response()->redirectTo('mascotas');
+        } catch (\Exception $e) {
+            return response()->redirectTo('mascotas');
+        }
+        return $user;
     }
 }
