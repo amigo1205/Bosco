@@ -11,7 +11,6 @@
 |
 */
 
-Route::group(['middleware' => 'web'], function(){
     Route::get('/', 'IndexController@index');
     Route::get('terminos-y-condiciones', 'IndexController@getTermsConditions');
     Route::get('ayuda', 'IndexController@getHelp');
@@ -27,7 +26,7 @@ Route::group(['middleware' => 'web'], function(){
     // Ajax Pet
     Route::get('mascotas-detalle', 'PetsController@getPetsDetail');
 
-    Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => ['web','auth']], function () {
         Route::get('mis-reportes', 'ReportsController@index');
         // Ajax Reports
         Route::get('mis-reportes-detalle-perdido', 'ReportsController@getReportsDetailLost');
@@ -41,9 +40,8 @@ Route::group(['middleware' => 'web'], function(){
     Route::get('ubigeo-distritos', 'UbigeoController@getUbigeoDistrict');
 
 
+
     Route::post('login','Auth\AuthController@login');
     Route::get('cerrar-sesion','Auth\AuthController@logout');
     Route::get('iniciar-sesion/fb', 'Auth\AuthController@redirectToProvider');
     Route::get('iniciar-sesion/fb/callback', 'Auth\AuthController@handleProviderCallback');
-
-});
