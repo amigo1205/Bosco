@@ -78,9 +78,10 @@ class AuthController extends Controller
     /**
      * Obtain the user information from Facebook.
      *
+     * @param Request $request
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback(Request $request)
     {
         try{
             $user_fb = Socialite::driver('facebook')->user();
