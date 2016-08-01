@@ -43,6 +43,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('login','Auth\AuthController@login');
     Route::get('cerrar-sesion','Auth\AuthController@logout');
+
+});
+
     Route::get('iniciar-sesion/fb', 'Auth\AuthController@redirectToProvider');
     Route::get('iniciar-sesion/fb/callback', 'Auth\AuthController@handleProviderCallback');
-});
