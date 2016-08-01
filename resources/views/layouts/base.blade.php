@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
 		<title>@section('title') @show </title>
 		@section('metas')
@@ -11,19 +11,20 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bosco.css') }}">
-    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/moment-with-locales.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap-filestyle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/bosco.js') }}"></script>
   </head>
   <body>
-		@include('blocks.block-header')
+        @include('blocks.block-menu')
 		@yield('content')
 		@include('blocks.block-footer')
 		@include('modals.modal-form-user')
-		@section('js')@show
+
+        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/moment-with-locales.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap-filestyle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bosco.js') }}"></script>
+        @section('js')@show
   </body>
 </html>

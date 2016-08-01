@@ -8,8 +8,9 @@ use App\Report;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class petsController extends Controller
+class PetsController extends Controller
 {
 	public function getPetsLost(Request $request)
 	{
@@ -36,12 +37,13 @@ class petsController extends Controller
 		return view('pets.page-pets-lost', 
       [
         'optionDepartments' => $optionDepartments, 
-        'reports' => $reports
+        'reports' => $reports,
+        'user' => Auth::check()?Auth::user():null
       ]
     );
   }
 
-  public function getPetsFound()
+  public function getPetsFound(Request $request)
   {
     $ubigeoId = FALSE;
     if ($request->isMethod('get')){
@@ -66,22 +68,21 @@ class petsController extends Controller
     return view('pets.page-pets-founds', 
       [
         'optionDepartments' => $optionDepartments, 
-        'reports' => $reports
+        'reports' => $reports,
+        'user' => Auth::check()?Auth::user():null
       ]
     );
   }
 
   public function getPetsDetail(Request $request)
   {
-    if ($request->isMethod('get')){
-      $id = $_GET['petid'];
-      $status = $_GET['status'];
+      $id = $request->get('petid');
+      $status = $request->get('status');
       $pet = Pet::getDataPet($id, $status);
       return response()->json([
         'result' => TRUE, 
         'path' => url(''), 
         'pet' => $pet
       ]);
-    }
   }
 }

@@ -81,12 +81,14 @@ $(document).ready(function() {
       data: { petid : $this.data('id'), status : $this.data('status') },
       success: function(data) { 
         if (data.result) {
+          $('#is-owner').html(data.pet.is_owner);
+          $('.pet-detail-data').find('label').html(data.pet.label);
           $('.pet-detail-image').html('<img src="' + data.path + '/images/pets/' + data.pet.pet_image + '">');
-          $('.pet-detail-location').html(data.pet.location_address);
-          $('.owner-detail-name').html(data.pet.owner_name);
-          $('.owner-detail-phone').html(data.pet.owner_phone);
-          $('.owner-detail-email').html('<a href="mailto:' + data.pet.owner_email + '">' + data.pet.owner_email + '</a>');
-          $('.owner-detail-reward').html('S/.' + data.pet.owner_reward);
+          $('.pet-detail-location').html(" "+data.pet.location_address);
+          $('.owner-detail-name').html(data.pet.user_name);
+          $('.owner-detail-phone').html(data.pet.user_phone);
+          $('.owner-detail-email').html('<a href="mailto:' + data.pet.user_email + '">' + data.pet.user_email + '</a>');
+          $('.owner-detail-reward').html('S/. ' + data.pet.owner_reward);
           $('.pet-detail-name').html(data.pet.pet_name);
           $('.pet-detail-race').html(data.pet.pet_race);
           $('.pet-detail-gender').html(data.pet.pet_gender);
@@ -218,6 +220,69 @@ $(document).ready(function() {
     });
   });
 
+  var submitSubscription = $('#form-subscriptions');
+  submitSubscription.submit(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "POST",
+      url: $this.attr('action'),
+      dataType: 'json',
+      cache: false,
+      data: submitSubscription.serialize(),
+      success: function(data) {
+        $('#subscription-message').show();
+        if (data.status) {
+          $('#subscription-message').html(data.message);
+        }else{
+          $('#subscription-message').html(data.errors.join('<br>'));
+        }
+      }
+    });
+  });
+
+  var submitRegister = $('#form-user-register').find('form');
+  submitRegister.submit(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "POST",
+      url: $this.attr('action'),
+      dataType: 'json',
+      cache: false,
+      data: submitSubscription.serialize(),
+      success: function(data) {
+        $('#register-message').show();
+        if (data.status) {
+          $('#register-message').html(data.message);
+        }else{
+          $('#register-message').html(data.errors.join('<br>'));
+        }
+      }
+    });
+  });
+
+  var submitLogin = $('#form-user-login').find('form');
+  submitLogin.submit(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      type: "POST",
+      url: $this.attr('action'),
+      dataType: 'json',
+      cache: false,
+      data: submitLogin.serialize(),
+      success: function(data) {
+        $('#login-message').show();
+        if (data.status) {
+          $('#login-message').html(data.message);
+          $(location).attr('href', data.url);
+        }else{
+          $('#login-message').html(data.errors.join('<br>'));
+        }
+      }
+    });
+  });
 });
 
 var map;

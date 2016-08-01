@@ -6,37 +6,37 @@
 
     <!-- Block Works Item -->
     <div class="row">
-      <div id="block-works-item-web" class="block-works-item clearfix">
+      <div id="block-works-item-app" class="block-works-item clearfix">
         <a href="#" class="block-works-item-link"></a>
-        <img src="{{ asset('images/work_web.png') }}">
+        <img src="{{ asset('images/work_app.png') }}">
         <div class="block-works-item-detail">
           <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h3>Web</h3>
+            <h3>App</h3>
             <ul>
               <li>
                 <div class="block-works-item-tag clearfix">
-                  <em class="works-item-web-tag-1"></em>
+                  <em class="works-item-app-tag-1"></em>
                   <div>
-                    <p>Tipo de reporte</p>
-                    <p>Selecciona el tipo de reporte a generar. Mascota perdida o mascota encontrada.</p>
+                    <p>Reportar</p>
+                    <p>Si tu mascot se pierde, puedes reportarla como perdida a través de la aplicación.</p>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="block-works-item-tag clearfix">
-                  <em class="works-item-web-tag-2"></em>
+                  <em class="works-item-app-tag-2"></em>
                   <div>
-                    <p>Datos</p>
-                    <p>Llena tus datos, los de tu mascot, los detalles del reporte y publicarlo.</p>
+                    <p>Growd GPS</p>
+                    <p>Cada smartphone con el app funciona como un radar de búsqueda paraa encontrarla.</p>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="block-works-item-tag clearfix">
-                  <em class="works-item-web-tag-3"></em>
+                  <em class="works-item-app-tag-3"></em>
                   <div>
-                    <p>Volante al instante</p>
-                    <p>Genera automaticamente un volante par aimprimir y compartir en redes sociales.</p>
+                    <p>Encontrado</p>
+                    <p>Tna pronto como un usuario pase cerca de ella, te mandaremos la ubicción excta donde fue vista.</p>
                   </div>
                 </div>
               </li>
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    @include('blocks.block-suscription')
+    @include('blocks.block-subscription')
 
   </div>
 </section>

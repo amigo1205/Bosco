@@ -38,7 +38,7 @@
                 </div>
                 <div class="gallery-item-detail">
                   <h2>{{ $item['name'] }}</h2>
-                  <p class="gallery-item-birthday">{{ $item['date'] }}</p>
+                  <p class="gallery-item-birthday">{{ $item['date']->format('d F Y') }}</p>
                   <p class="gallery-item-location">{{ $item['address'] }}</p>
                 </div>
               </a>
@@ -56,4 +56,9 @@
 
 @include('modals.modal-pets-detail')
 
+@endsection
+
+@section('js')
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyCVwxoueL862CKW2souz3oc3XGddmPYU_8&callback=initMap"></script>
 @endsection

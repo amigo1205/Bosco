@@ -6,16 +6,18 @@ use App\Report;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class reportsController extends Controller
+class ReportsController extends Controller
 {
 	public function index()
 	{
-    $reports['lost'] = Report::getDataReports(array('status' => 'lost', 'userid' => 2), FALSE);
-    $reports['founds'] = Report::getDataReports(array('status' => 'found', 'userid' => 2), FALSE);
+    $reports['lost'] = Report::getDataReports(['status' => 'lost', 'userid' => Auth::id()], FALSE);
+    $reports['founds'] = Report::getDataReports(['status' => 'found', 'userid' => Auth::id()], FALSE);
     return view('reports.page-reports-index', 
       [
-        'reports' => $reports
+        'reports' => $reports,
+        'user' => Auth::user()
       ]
     );
   }

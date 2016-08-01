@@ -8,26 +8,37 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <form action="">
+            <form role="form" method="POST" action="{{ url('/login') }}">
+              {{ csrf_field() }}
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
+                <input name="email" type="email" class="form-control" placeholder="Email">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <input name="password" type="password" class="form-control" placeholder="Contraseña">
               </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Recordarme <a href="#">Olvidé contraseña</a>
-                  </label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input name="remember" type="checkbox"> Recordarme
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div style="margin-top:10px;">
+                    <a target="_blank" href="{{ url('recuperar-contrasena') }}">Olvidé contraseña</a>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
               </div>
               <div class="form-group">
-                <button type="button" class="btn btn-facebook btn-lg btn-block btn-facebook">Ingresa con Facebook</button>
+                <a style="color:#fff" href="{{ url('iniciar-sesion/fb') }}" class="btn btn-facebook btn-lg btn-block btn-facebook">Ingresa con Facebook</a>
               </div>
+              <div id="login-message" style="display: none"></div>
             </form>
           </div>
         </div>
@@ -44,29 +55,31 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <form action="">
+            <form role="form" method="POST" action="{{ url('/registro') }}">
+              {{ csrf_field() }}
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nombre">
+                <input name="name" type="text" class="form-control" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
+                <input name="email" type="email" class="form-control" placeholder="Email">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <input name="password" type="password" class="form-control" placeholder="Contraseña">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirmar contraseña">
+                <input name="password_confirmation" type="password" class="form-control" placeholder="Confirmar contraseña">
               </div>
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> Acepto los <a href="index.php?page=terms-conditions">Términos y Condiciones</a>
+                    <input type="checkbox"> Acepto los <a target="_blank" href="{{ url('terminos-y-condiciones') }}">Términos y Condiciones</a>
                   </label>
                 </div>
               </div>
               <div class="form-group">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Registrar</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
               </div>
+              <div id="register-message" style="display: none"></div>
             </form>
           </div>
         </div>

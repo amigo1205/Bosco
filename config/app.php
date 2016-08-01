@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +155,10 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //App\Providers\ComposerServiceProvider::class,
 
+        Jenssegers\Date\DateServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -202,6 +205,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Date' => Jenssegers\Date\Date::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

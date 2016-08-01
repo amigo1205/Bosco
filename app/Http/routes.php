@@ -11,28 +11,36 @@
 |
 */
 
-Route::get('/', 'indexController@index');
-Route::get('terminos-y-condiciones', 'indexController@getTermsConditions');
-Route::get('ayuda', 'indexController@getHelp');
-Route::get('contactanos', 'indexController@getContactUs');
-Route::get('mascotas', 'petsController@getPetsLost');
-Route::get('mascotas/perdidos', 'petsController@getPetsLost');
-Route::get('mascotas/encontrados', 'petsController@getPetsFound');
-Route::get('mis-reportes', 'reportsController@index');
-Route::get('como-funciona', 'functioningController@index');
-Route::get('como-funciona/web', 'functioningController@getFunctioningWeb');
-Route::get('como-funciona/app', 'functioningController@getFunctioningApp');
+Route::get('/', 'IndexController@index');
+Route::get('terminos-y-condiciones', 'IndexController@getTermsConditions');
+Route::get('ayuda', 'IndexController@getHelp');
+Route::get('contactanos', 'IndexController@getContactUs');
+Route::get('mascotas', 'PetsController@getPetsLost');
+Route::get('mascotas/perdidos', 'PetsController@getPetsLost');
+Route::get('mascotas/encontrados', 'PetsController@getPetsFound');
+Route::get('como-funciona', 'ServicesController@index');
+Route::get('como-funciona/web', 'ServicesController@getFunctioningWeb');
+Route::get('como-funciona/app', 'ServicesController@getFunctioningApp');
 
+Route::match(['get', 'post'], 'subscription','SubscriptionController@index');
 // Ajax Pet
-Route::get('mascotas-detalle', 'petsController@getPetsDetail');
+Route::get('mascotas-detalle', 'PetsController@getPetsDetail');
 
-// Ajax Reports
-Route::get('mis-reportes-detalle-perdido', 'reportsController@getReportsDetailLost');
-Route::get('mis-reportes-detalle-encontrado', 'reportsController@getReportsDetailFound');
+Route::group(['middleware' => ['web','auth']], function () {
+    Route::get('mis-reportes', 'ReportsController@index');
+    // Ajax Reports
+    Route::get('mis-reportes-detalle-perdido', 'ReportsController@getReportsDetailLost');
+    Route::get('mis-reportes-detalle-encontrado', 'ReportsController@getReportsDetailFound');
+    // AJax Send ReportPost
+    Route::get('mis-reportes-registrar', 'ReportsController@sendReport');
+});
 
 // Ajax Ubigeo
-Route::get('ubigeo-ciudades', 'ubigeoController@getUbigeoCity');
-Route::get('ubigeo-distritos', 'ubigeoController@getUbigeoDistrict');
+Route::get('ubigeo-ciudades', 'UbigeoController@getUbigeoCity');
+Route::get('ubigeo-distritos', 'UbigeoController@getUbigeoDistrict');
 
-// AJax Send ReportPost
-Route::get('mis-reportes-registrar', 'reportsController@sendReport');
+
+Route::post('login','Auth\AuthController@login');
+Route::get('cerrar-sesion','Auth\AuthController@logout');
+Route::get('iniciar-sesion/fb', 'Auth\AuthController@redirectToProvider');
+Route::get('iniciar-sesion/fb/callback', 'Auth\AuthController@handleProviderCallback');

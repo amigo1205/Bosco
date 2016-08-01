@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    @include('blocks.block-suscription')
+    @include('blocks.block-subscription')
 
   </div>
 </section>

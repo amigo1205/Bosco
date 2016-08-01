@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\Request;
 use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use Mockery\CountValidator\Exception;
 
 class AuthController extends Controller
 {
@@ -21,38 +26,20 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function login(LoginRequest $request)
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-    }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+        if(Auth::attempt(['email'=>$request->get('email'), 'password'=>$request->get('password')],$request->get('remember'))){
+            return response()->json([
+                'status' => true,
+                'message' => 'Inicio con sesión con exito!',
+                'url' => url('mis-reportes')
+            ]);
+        }
+        return response()->json([
+            'status' => false,
+            'errors' => ['No se pudo iniciar sesión, verifica tu email o contraseña!']
         ]);
+
     }
 
     /**
@@ -61,12 +48,49 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    public function register(RegisterRequest $request)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
         ]);
+    }
+
+    public function logout()
+    {
+        if(Auth::check()){
+            Auth::logout();
+        }
+        return response()->redirectTo('mascotas');
+    }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+        try{
+            $user_fb = Socialite::driver('facebook')->user();
+            if($user_fb->getEmail()==''){ throw new Exception('email'); }
+            $user = User::where('email',$user_fb->getEmail())->first();
+            Auth::login($user);
+            $url = 'mis-reportes';
+        }catch (Exception $e){
+            $url = 'mascotas';
+        }
+        return response()->redirectTo($url);
     }
 }

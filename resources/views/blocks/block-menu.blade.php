@@ -9,7 +9,7 @@
         <nav>
           <!-- Block Logo -->
           <div class="col-lg-2 col-md-2 col-sm-2 block-logo text-center">
-            <h1><a href="{{url('/')}}">bosco</a></h1>
+            <h1><a href="{{ url('/')}}">bosco</a></h1>
           </div>
           <!-- Block Menu -->
           <div class="col-lg-8 col-md-8 col-sm-8 block-menu">
@@ -25,21 +25,31 @@
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav text-center">
                   <li class="first">
-                    <a href="{{url('/mascotas')}}" {{ (Request::is('mascotas') || Request::is('mascotas/*'))  ? ' class = "active"' : null }}>Mascotas</a>
+                    <a href="{{ url('/mascotas')}}" {{ (Request::is('mascotas') || Request::is('mascotas/*'))  ? ' class = "active"' : null }}>Mascotas</a>
                   </li>
                   <li>
-                    <a href="{{url('/como-funciona')}}" {{ (Request::is('como-funciona') || Request::is('como-funciona/*'))  ? ' class = "active"' : null }}>¿Como funciona?</a>
+                    <a href="{{ url('/como-funciona')}}" {{ (Request::is('como-funciona') || Request::is('como-funciona/*'))  ? ' class = "active"' : null }}>¿Como funciona?</a>
                   </li>
                   <li class="last">
-                    <a href="{{url('/ayuda')}}" {{ (Request::is('ayuda') || Request::is('ayuda/*'))  ? ' class = "active"' : null }}>Ayuda</a>
+                    <a href="{{ url('/ayuda')}}" {{ (Request::is('ayuda') || Request::is('ayuda/*'))  ? ' class = "active"' : null }}>Ayuda</a>
                   </li>
-                  <li data-toggle="modal" class="menu-item-session"><a data-toggle="modal" href="#form-user">Ingresar</a></li>
+                  <li data-toggle="modal" class="menu-item-session">
+                    @if(empty($user->id))
+                    <a data-toggle="modal" href="#form-user">Ingresar</a>
+                    @else
+                      <a href="{{ url('cerrar-sesion') }}">Cerrar Sesión</a>
+                    @endif
+                  </li>
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
           </div>
-          <div class="col-lg-2 col-md-2 col-sm-2 block-session text-center">
-            <a data-toggle="modal" href="#form-user">Ingresar</a>
+          <div class="col-lg-2 col-md-2 col-sm-2 block-session">
+            @if(empty($user->id))
+              <a data-toggle="modal" href="#form-user">Ingresar</a>
+            @else
+              <a href="{{ url('cerrar-sesion') }}">Cerrar Sesión</a>
+            @endif
           </div>
         </nav>
       </div>

@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @section('content')
-<section id="content">
+<section id="content" class="bg-home">
   <div id="page-home" class="container-fluid">
 
     <!-- Block Video -->
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-		@include('blocks.block-suscription')
+    @include('blocks.block-subscription')
 
   </div>
 </section>
