@@ -26,7 +26,7 @@
     // Ajax Pet
     Route::get('mascotas-detalle', 'PetsController@getPetsDetail');
 
-    Route::group(['middleware' => ['web','auth']], function () {
+    Route::group(['middleware' => ['auth']], function () {
         Route::get('mis-reportes', 'ReportsController@index');
         // Ajax Reports
         Route::get('mis-reportes-detalle-perdido', 'ReportsController@getReportsDetailLost');
