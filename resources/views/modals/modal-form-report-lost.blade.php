@@ -21,11 +21,17 @@
               </div>
               <div class="form-group">
                 <label>Raza</label>
-                <input type="text" class="form-control">
+                <select class="form-control" name="race">
+                  <option value="dog">Perro</option>
+                  <option value="cat">Gato</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Género</label>
-                <input type="text" class="form-control">
+                <select class="form-control" name="gender">
+                  <option value="male">Macho</option>
+                  <option value="female">Hembra</option>
+                </select>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -61,7 +67,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Descripción de mascota</label>
+                <label>Descripción del reporte</label>
                 <p class="help-block">(150 caracteres max)</p>
                 <textarea class="form-control" rows="8"></textarea>
               </div>
@@ -90,7 +96,7 @@
                 <input type="text" class="form-control">
               </div>
               <div class="form-group">
-                <label>Recompenza</label>
+                <label>Recompensa</label>
                 <p class="help-block">(en soles)</p>
                 <input type="text" class="form-control">
                 <p class="description-block">Opcional*</p>

@@ -17,11 +17,17 @@
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
                 <label>Raza</label>
-                <input type="text" class="form-control">
+                <select class="form-control" name="race">
+                  <option value="dog">Perro</option>
+                  <option value="cat">Gato</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Género</label>
-                <input type="text" class="form-control">
+                <select class="form-control" name="gender">
+                  <option value="male">Macho</option>
+                  <option value="female">Hembra</option>
+                </select>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -79,23 +85,23 @@
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
                 <label>Nombre de contacto</label>
-                <input type="text" class="form-control">
+                <input name="user[name]" type="text" class="form-control">
               </div>
               <div class="form-group">
                 <label>Número de contacto</label>
-                <input type="phone" class="form-control">
+                <input name="user[phone]" type="phone" class="form-control">
               </div>
               <div class="form-group">
-                <label>Recompenza</label>
+                <label>Recompensa</label>
                 <p class="help-block">(en soles)</p>
-                <input type="text" class="form-control">
+                <input name="report[reward]" type="text" class="form-control">
                 <p class="description-block">Opcional*</p>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
                 <label>Email de contacto #1</label>
-                <input type="text" class="form-control">
+                <input name="user[email]" type="text" class="form-control" disabled>
               </div>
             </div>
             <div class="col-lg-12 col-md-12 center-block">
