@@ -58,7 +58,7 @@ class Report extends Model
             });
         }
 
-        $result = $result->select('pet_id', 'last_location_id', 'status', 'date');
+        $result = $result->select('pet_id', 'id','last_location_id', 'status', 'date');
         
         if ($ubigeoId) {
             $result->whereHas('location',function($query) use ($ubigeoId){
@@ -78,7 +78,8 @@ class Report extends Model
         if (!empty($result)) {
             foreach ($result as $row) {
                 $data[] = [
-                    'id' => $row->pet->id, 
+                    'id' => $row->id,
+                    'pet_id'=>$row->pet->id,
                     'name' => $row->pet->name, 
                     'date' => new Date($row->date),
                     'address' => $row->location->address, 
@@ -123,8 +124,8 @@ class Report extends Model
             $location = Location::where('id','=',$row->last_location_id)->select('address')->get();
             $user = User::where('id','=',$row->pet->user_id)->select('phone')->get();
             $data = [
-                'id' => $row->id, 
-                'phone' => $user[0]->phone, 
+                'id' => $row->id,
+                'phone' => $user[0]->phone,
                 'date' => date('d m Y', strtotime($row->date)), 
                 'address' => $location[0]->address, 
                 'image' => $row->pet->photos[0]->url

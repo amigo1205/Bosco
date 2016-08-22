@@ -1073,6 +1073,7 @@ a.btn-video:hover {
   margin-bottom: 0;
 }
 
+
 .modal-report-data li {
   border-right: 1px solid #fff;
   color: #fff;
@@ -1105,6 +1106,19 @@ a.btn-video:hover {
   text-align: center;
   width: 100%;
   z-index: 1040;
+}
+
+.report-phone-export, .report-detail-data-export{
+  box-sizing: border-box;
+}
+
+.report-detail-export-image img{
+  width: 100%;
+}
+
+.report-detail-center-export{
+  margin: 0 auto;
+  float: none !important;
 }
 
 .modal-report-detail-data p {
