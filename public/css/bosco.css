@@ -51,6 +51,7 @@ body {
   color: #333;
   font-family: "Montserrat Light", Arial, "Georgia", serif;
   font-size: 11px;
+  min-height: 100vh;
   line-height: 1.8em;
   position: relative;
 }
