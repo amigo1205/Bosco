@@ -170,6 +170,7 @@ $(document).ready(function() {
           $('.report-detail-lost-race').html(data.pet.race);
           $('.report-detail-lost-gender').html(data.pet.gender);
           $('.report-detail-lost-date').html(data.pet.date);
+          $('.btn-download-lost').attr('href',data.path+'/descargar-volante/perdido/?reportid='+$this.data('id'));
         }
       }
     });
@@ -195,6 +196,7 @@ $(document).ready(function() {
           $('.report-detail-found-address').html(data.pet.address);
           $('.report-detail-found-phone').html('<a class="report-phone" href="tel:' + data.pet.phone + '">' + data.pet.phone + '</a>');
           $('.report-detail-found-date').html(data.pet.date);
+          $('.btn-download-found').attr('href',data.path+'/descargar-volante/encontrado/?reportid='+$this.data('id'));
         }
       }
     });

@@ -21,6 +21,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('como-funciona', 'ServicesController@index');
     Route::get('como-funciona/web', 'ServicesController@getFunctioningWeb');
     Route::get('como-funciona/app', 'ServicesController@getFunctioningApp');
+    Route::get('descargar-volante/{status}','ReportsController@getDownloadReport')->where('status','perdido|encontrado');
 
     Route::match(['get', 'post'], 'subscription','SubscriptionController@index');
     // Ajax Pet

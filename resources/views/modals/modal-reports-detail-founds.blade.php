@@ -46,7 +46,7 @@
         </div>
         <div class="modal-report-info">
           <div class="modal-report-button">
-            <a href="#" class="btn  btn-button btn-block btn-blue">Descargar volante</a>
+            <a href="#" class="btn btn-download-found btn-button btn-block btn-blue">Descargar volante</a>
           </div>
         </div>
       </div>

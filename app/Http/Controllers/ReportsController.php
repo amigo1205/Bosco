@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Report;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ class ReportsController extends Controller
   public function getReportsDetailLost(Request $request)
   {
     if ($request->isMethod('get')){
-      $id = $_GET['reportid'];
+      $id = $request->get('reportid');
       $report = Report::getDataReport($id, 'lost');
       return response()->json([
         'result' => TRUE, 
@@ -38,7 +39,7 @@ class ReportsController extends Controller
   public function getReportsDetailFound(Request $request)
   {
     if ($request->isMethod('get')){
-      $id = $_GET['reportid'];
+      $id = $request->get('reportid');
       $report = Report::getDataReport($id, 'found');
       return response()->json([
         'result' => TRUE, 
@@ -53,6 +54,21 @@ class ReportsController extends Controller
     return response()->json([
       'result' => TRUE
     ]);
+  }
+
+  public function getDownloadReport($status, Request $request)
+  {
+    if($status=='perdido'){
+        $statusQ = 'lost';
+    }
+    if($status=='encontrado'){
+        $statusQ = 'found';
+    }
+    $id = $request->get('reportid');
+    $report = Report::getDataReport($id, $statusQ);
+
+    $pdf = PDF::loadView('pdf/download-report-'.$statusQ, ['report'=>$report]);
+    return $pdf->download($status.'.pdf');
   }
 
 }
