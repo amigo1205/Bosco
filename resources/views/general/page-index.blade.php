@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.home')
 @section('content')
 <section id="content" class="bg-home">
   <div id="page-home" class="container-fluid">

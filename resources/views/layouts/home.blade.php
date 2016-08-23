@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bosco.css') }}">
   </head>
-  <body>
+  <body id="home-page">
 
     @include('blocks.block-menu')
 		@yield('content')
@@ -27,6 +27,6 @@
     <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bosco.js') }}"></script>
     @section('js')@show
-    
+
   </body>
 </html>

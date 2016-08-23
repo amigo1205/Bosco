@@ -48,10 +48,11 @@
 
 body {
   background: #F1F1F2;
+  color: #333;
   font-family: "Montserrat Light", Arial, "Georgia", serif;
   font-size: 11px;
   line-height: 1.8em;
-  color: #333;
+  position: relative;
 }
 
 a, 
@@ -213,6 +214,10 @@ h3.title {
   color: #B4C0C6;
 }
 
+#home-page .block-menu a {
+  color: #d6d7d8;
+}
+
 .block-menu a.active, 
 .block-menu a:hover,
 .block-session a.active, 
@@ -271,6 +276,28 @@ h3.title {
 .block-buttons a:hover {
   background: #E63A38;
   color: #fff;
+}
+
+#home-page header {
+  background: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#home-page header .header-top {
+  background: none;
+}
+
+#home-page section#content {
+
+}
+
+/* Content */
+
+section#content {
+  margin-bottom: 105px;
 }
 
 /* Block Filters */
@@ -341,9 +368,9 @@ input[type="submit"]:hover {
 .block-video {
   background-image: url("../img/bg.png");
   background-position-x: center;
-  background-position-y: -350px;
+  background-position-y: bottom;
   background-size: cover;
-  height: 570px;
+  height: 100vh;
   position: relative;
   width: 100%;
 }
@@ -1554,8 +1581,11 @@ a.btn-video:hover {
 
 footer {
   background: #063042;
+  bottom: -105px;
   height: 105px;
   padding: 20px;
+  position: absolute;
+  width: 100%;
 }
 
 footer .block-logo h1 a {
@@ -1662,6 +1692,9 @@ footer .block-socialnetwork li a.link-instagran {
   .nav > li > a {
     background-color: #063042 !important;
     line-height: 28px;
+  }
+  #home-page .nav > li > a {
+    background: none !important;
   }
   .nav > li > a:hover {
     background: none;
