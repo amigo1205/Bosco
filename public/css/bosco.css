@@ -454,7 +454,7 @@ a.btn-video:hover {
   -moz-transition: background .25s ease-in-out;
   -webkit-transition: background .25s ease-in-out;
   background: rgba(255, 255, 255, 0.8);
-  height: 800px;
+  height: 1200px;
   left: 0;
   position: absolute;
   top: 0;
@@ -466,11 +466,12 @@ a.btn-video:hover {
 }
 
 .block-about-us .block-about-us-item .block-about-us-detail {
+  margin-top: -100px;
   padding-left: 5%;
   padding-right: 5%;
   position: absolute;
   text-align: center;
-  top: 100px;
+  top: 50%;
   width: 100%;
 }
 
@@ -492,6 +493,7 @@ a.btn-video:hover {
   line-height: 30px;
   margin-top: 45px;
   padding-bottom: 30px;
+  max-width: 300px;
 }
 
 .block-about-us .block-about-us-item a:hover p {
@@ -696,7 +698,7 @@ a.btn-video:hover {
   padding-right: 0;
 }
 
-.block-suscription .block-suscription-item .block-suscription-background{
+.block-suscription .block-suscription-item .block-suscription-background {
   transition: background .25s ease-in-out;
   -moz-transition: background .25s ease-in-out;
   -webkit-transition: background .25s ease-in-out;
@@ -714,6 +716,28 @@ a.btn-video:hover {
   text-align: center;
   top: 100px;
   width: 100%;
+}
+
+.bg-home .block-suscription .block-suscription-item .block-suscription-background {
+  display: none;
+}
+
+.bg-home .block-suscription .block-suscription-item img {
+  display: none;
+}
+
+.bg-home .block-suscription-item {
+  background: url('../img/bg-home-subscription.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.bg-home #page-home .block-suscription .form-control::-webkit-input-placeholder {
+   color: #fff !important;  
+}
+
+.bg-home #page-home .block-suscription h3, 
+.bg-home #page-home .block-suscription h5 {
+  color: #fff;
 }
 
 .block-suscription .block-suscription-item img {
@@ -1931,6 +1955,9 @@ footer .block-socialnetwork li a.link-instagran {
     padding: 15px;
     width: 100%;
   }
+  .block-about-us .block-about-us-item .block-about-us-detail {
+    top: 55%;
+  }
   .block-gallery li a img {
     max-width: 100%;
   }
@@ -2194,7 +2221,7 @@ footer .block-socialnetwork li a.link-instagran {
     height: 150px;
   }
   .block-about-us .block-about-us-item .block-about-us-detail {
-    top: 60px;
+    top: 50%;
   }
   .block-about-us .block-about-us-item h3 {
     font-size: 18px;
