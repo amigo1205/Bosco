@@ -28,7 +28,7 @@
       <div id="block-gallery-lost" class="block-gallery clearfix">
         <div class="view-content">
         @if(!empty($reports['data']))
-          <ul class="text-center">
+          <ul class="pets-list text-left">
           @foreach($reports['data'] as $item)
             <li>
               <a data-toggle="modal" href="#pet-detail">

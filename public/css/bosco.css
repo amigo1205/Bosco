@@ -202,6 +202,21 @@ h3.title {
   width: 80px;
 }
 
+#home-page .block-logo h1 {
+  height: 39px;
+  margin-top: -10px;
+}
+
+#home-page .block-logo h1 a {
+  background: url('../img/bosco_logo_home.png') no-repeat 0 0;
+  font-size: 35px;
+  font-weight: normal;
+  height: 39px;
+  line-height: 40px;
+  padding-left: 37px;
+  width: 135px;
+}
+
 .block-menu {
   font-size: 11px;
 }
@@ -1737,6 +1752,14 @@ footer .block-socialnetwork li a.link-instagran {
   }
   .nav > li > a:hover {
     background: none;
+  }
+  #form-pets-filters {
+    margin-right: 10px;
+  }
+  .pets-list {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1034px;
   }
 }
 
