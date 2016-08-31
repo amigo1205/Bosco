@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PetsController extends Controller
 {
-	public function getPetsLost(Request $request)
+	public function getPetsLost()
 	{
     $ubigeoId = FALSE;
     if ($request->isMethod('get')){
@@ -29,7 +29,7 @@ class PetsController extends Controller
       }
     }
     $parameters = array(
-      'status' => 'lost', 
+      'status' => 'lost',
       'userid' => FALSE
     );
     if ($ubigeoId) $parameters['ubigeoid'] = $ubigeoId;
@@ -79,10 +79,26 @@ class PetsController extends Controller
       $id = $request->get('petid');
       $status = $request->get('status');
       $pet = Pet::getDataPet($id, $status);
+
       return response()->json([
         'result' => TRUE, 
         'path' => url(''), 
         'pet' => $pet
       ]);
+  }
+
+  public function postPetsLost(Request $request)
+  {
+      $parameters = array(
+          'status' => 'lost',
+          'userid' => FALSE,
+          'department' => $request->get('department')
+      );
+
+      return response()->json([
+          'status' => TRUE,
+          'reports' => Report::getDataReports($parameters, TRUE, 10, 'mascotas/perdidos')
+      ]);
+
   }
 }

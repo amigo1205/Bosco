@@ -18,6 +18,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('mascotas', 'PetsController@getPetsLost');
     Route::get('mascotas/perdidos', 'PetsController@getPetsLost');
     Route::get('mascotas/encontrados', 'PetsController@getPetsFound');
+
+    Route::post('filter/mascotas/perdidos', 'PetsController@postPetsLost');
+    Route::post('filter/mascotas/encontrados', 'PetsController@postPetsFound');
+    
     Route::get('como-funciona', 'ServicesController@index');
     Route::get('como-funciona/web', 'ServicesController@getFunctioningWeb');
     Route::get('como-funciona/app', 'ServicesController@getFunctioningApp');

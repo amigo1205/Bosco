@@ -18,8 +18,8 @@
       <div class="block-reports-content col-lg-12">
         <div id="block-reports-lost" class="block-reports clearfix">
           <div class="view-content">
-          @if(!empty($reports['lost']['data']))
             <ul class="text-left">
+              @if(!empty($reports['lost']['data']))
             @foreach($reports['lost']['data'] as $item)
               <li>
                 <div class="report-item-content">
@@ -36,22 +36,22 @@
                 </div>
               </li>
               @endforeach
-              <li>
-                <a data-toggle="modal" href="#form-report-lost" class="report-add">
-                  <em>+</em>
-                  <p>Reportar encontrado</p>
-                </a>
-              </li>
-            </ul>
             @endif
+                <li>
+                  <a data-toggle="modal" href="#form-report-lost" class="report-add">
+                    <em>+</em>
+                    <p>Reportar encontrado</p>
+                  </a>
+                </li>
+            </ul>
           </div>
         </div>
         <div class="report-line"></div>
         <div id="block-reports-founds" class="block-reports clearfix">
           <div class="view-content">
-          @if(!empty($reports['founds']['data']))
             <ul class="text-left">
-            @foreach($reports['founds']['data'] as $item)
+              @if(!empty($reports['founds']['data']))
+              @foreach($reports['founds']['data'] as $item)
               <li>
                 <div class="report-item-content">
                   <img src="{{ asset('images/pets/' . $item['image']) }}" />
@@ -66,14 +66,14 @@
                 </div>
               </li>
               @endforeach
-              <li>
-                <a data-toggle="modal" href="#form-report-founds" class="report-add">
-                  <em>+</em>
-                  <p>Reportar encontrado</p>
-                </a>
-              </li>
-            </ul>
             @endif
+                <li>
+                  <a data-toggle="modal" href="#form-report-founds" class="report-add">
+                    <em>+</em>
+                    <p>Reportar encontrado</p>
+                  </a>
+                </li>
+            </ul>
           </div>
         </div>
       </div>
