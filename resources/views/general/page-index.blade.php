@@ -59,7 +59,7 @@
         <ul>
           <li><a href="#"><img src="{{ asset('images/partners/logo_startup_peru.png') }}"></a></li>
           <li><a href="#"><img src="{{ asset('images/partners/logo_pucp.png') }}"></a></li>
-          <li><a href="#"><img src="{{ asset('images/partners/logo_universidad_delima.png') }}"></a></li>
+          <!--li><a href="#"><img src="{{ asset('images/partners/logo_universidad_delima.png') }}"></a></li-->
           <li><a href="#"><img src="{{ asset('images/partners/logo_wuf.png') }}"></a></li>
           <li><a href="#"><img src="{{ asset('images/partners/logo_voz_animal.png') }}"></a></li>
           <li><a href="#"><img src="{{ asset('images/partners/logo_sos_veterinaria.png') }}"></a></li>
