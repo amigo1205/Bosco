@@ -37,7 +37,10 @@
                     @if(empty($user->id))
                     <a data-toggle="modal" href="#form-user">Ingresar</a>
                     @else
-                      <a href="{{ url('cerrar-sesion') }}">{{ $user->name }} <span class="caret"></span></a>
+                    <a href="#">{{ $user->name }} <em class="caret"></em></a>
+                    <ul>
+                      <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
+                    </ul>
                     @endif
                   </li>
                 </ul>
@@ -48,7 +51,12 @@
             @if(empty($user->id))
               <a data-toggle="modal" href="#form-user">Ingresar</a>
             @else
-              <a href="{{ url('cerrar-sesion') }}">{{ $user->name }} <span class="caret"></span></a>
+              <div class="link-user">
+                <span>
+                  {{ $user->name }} <em class="caret"></em>
+                  <a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a>
+                </span>
+              </a>
             @endif
           </div>
         </nav>
