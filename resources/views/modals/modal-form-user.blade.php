@@ -72,7 +72,7 @@
               <div class="form-group">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> Acepto los <a target="_blank" href="{{ url('terminos-y-condiciones') }}">Términos y Condiciones</a>
+                    <input type="checkbox" name="terms"> Acepto los <a target="_blank" href="{{ url('terminos-y-condiciones') }}">Términos y Condiciones</a>
                   </label>
                 </div>
               </div>

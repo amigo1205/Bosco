@@ -42,6 +42,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
+    Route::post('registro','Auth\AuthController@register');
     Route::post('login','Auth\AuthController@login');
     Route::get('cerrar-sesion','Auth\AuthController@logout');
 

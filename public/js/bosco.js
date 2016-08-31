@@ -252,7 +252,7 @@ $(document).ready(function() {
       url: $this.attr('action'),
       dataType: 'json',
       cache: false,
-      data: submitSubscription.serialize(),
+      data: submitRegister.serialize(),
       success: function(data) {
         $('#register-message').show();
         if (data.status) {
