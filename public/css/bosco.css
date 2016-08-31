@@ -57,6 +57,10 @@
   font-style: normal;
 }
 
+html, 
+body {
+}
+
 body {
   background: #F1F1F2;
   color: #333;
@@ -65,6 +69,9 @@ body {
   min-height: 100vh;
   line-height: 1.8em;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
 }
 
 a, 
@@ -696,6 +703,23 @@ a.btn-video:hover {
 
 /* Works */
 
+.block-works {
+  position: relative;
+}
+
+.block-works-item-return {
+  background: url('../img/sprite.png') no-repeat -85px 0;
+  bottom: 40px;
+  display: block;
+  font-size: 0;
+  height: 33px;
+  position: absolute;
+  right: 40px;
+  text-indent: -9999px;
+  width: 33px;
+  z-index: 9;
+}
+
 .block-works .block-work-item {
   overflow-y: hidden;
   padding-left: 0;
@@ -719,7 +743,12 @@ a.btn-video:hover {
   width: 100%;
 }
 
-.block-works .block-work-item a:hover .block-works-background {
+.block-works .block-work-item .service-item {
+  cursor: pointer;
+}
+
+.block-works .block-work-item a:hover .block-works-background, 
+.block-works .block-work-item .service-item:hover .block-works-background {
   background: rgba(233, 46, 46, 0.9);
 }
 
@@ -2320,4 +2349,33 @@ footer .block-socialnetwork li a.link-instagran {
     height: auto;
     width: 100%;
   }
+}
+
+.works-content {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  -webkit-transition: all .6s ease-in-out;
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -ms-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+.works-content-right {
+  margin-right: -100%;
+  right: 0;
+}
+
+.works-content-left {
+  margin-left: -100%;
+  left: 0;
+}
+
+.works-content-left:target {
+  margin-left: 0%;
+}
+
+.works-content-right:target {
+  margin-right: 0%;
 }
