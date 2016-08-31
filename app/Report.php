@@ -67,8 +67,8 @@ class Report extends Model
             $ubigeoQuery =  Ubigeo::where('deparment','=',$department_id);
         }
         if($province_id){
-            $ubigeoQuery = $ubigeoQuery->where('province','=',);
-            }else{
+            $ubigeoQuery = $ubigeoQuery->where('province','=',$province_id);
+            /*}else{
                 if ($department_id) {
                     $departments =  Ubigeo::where('deparment','=',$department_id)->select('id')->get();
                     $array_departments = array_map(function($department){ return $department['id']; }, $departments->toArray());
@@ -76,7 +76,7 @@ class Report extends Model
                         $query->whereIn('ubigeo_id',$array_departments);
                     });
                 }
-            }
+            }*/
         }
 
         if($department_id || $province_id || $district_id){
