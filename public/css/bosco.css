@@ -2379,9 +2379,14 @@ footer .block-socialnetwork li a.link-instagran {
   }
 }
 
+.section-works {
+  position: relative;
+}
+
 .works-content {
   width: 100%;
   position: absolute;
+  top: 0;
   z-index: 2;
   -webkit-transition: all .6s ease-in-out;
   -moz-transition: all .6s ease-in-out;
@@ -2391,19 +2396,17 @@ footer .block-socialnetwork li a.link-instagran {
 }
 
 .works-content-right {
-  margin-right: -100%;
-  right: 0;
+  right: -100%;
 }
 
 .works-content-left {
-  margin-left: -100%;
-  left: 0;
+  left: -100%;
 }
 
 .works-content-left:target {
-  margin-left: 0%;
+  left: 0;
 }
 
 .works-content-right:target {
-  margin-right: 0%;
+  right: 0;
 }

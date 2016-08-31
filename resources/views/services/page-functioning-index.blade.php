@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('content')
 
-<section id="content">
+<section id="content" class="section-works">
 
   <!-- Block Works Item -->
   <div id="works-web" class="works-content works-content-left">
