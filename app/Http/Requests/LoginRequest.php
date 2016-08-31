@@ -28,4 +28,14 @@ class LoginRequest extends Request
             'password' => 'required|min:6'
         ];
     }
+
+    public function response(array $errors)
+    {
+        if($this->ajax()){
+            return response()->json([
+                'status'=>false,
+                'errors'=>array_flatten($errors)
+            ]);
+        }
+    }
 }
