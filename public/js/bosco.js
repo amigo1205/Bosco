@@ -123,6 +123,8 @@ $(document).ready(function() {
         }
       }
     });
+
+
   });
 
   var locationsCity = $('#ubigeo-city');
@@ -293,5 +295,18 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 8,
     mapTypeControl: true,
+  });
+}
+
+function loadPets() {
+  $.ajax({
+    type: "GET",
+    url: $(this).parent().parent().attr('actions'),
+    data: { department : $this.val(), province: $('#ubigeo-city').val(), district: $('#ubigeo-district').val() },
+    success: function(data) {
+      if (data.status) {
+
+      }
+    }
   });
 }

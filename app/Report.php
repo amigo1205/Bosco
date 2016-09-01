@@ -31,9 +31,9 @@ class Report extends Model
         $data = [];
         $status = (isset($parameters['status'])) ? $parameters['status'] : FALSE;
         $userId = (isset($parameters['userid'])) ? $parameters['userid'] : FALSE;
-        $department_id = (isset($parameters['department_id'])) ? $parameters['department_id'] : FALSE;
-        $province_id = (isset($parameters['province_id'])) ? $parameters['province_id'] : FALSE;
-        $district_id = (isset($parameters['district_id'])) ? $parameters['district_id'] : FALSE;
+        $department_id = (isset($parameters['department'])) ? $parameters['department'] : FALSE;
+        $province_id = (isset($parameters['province'])) ? $parameters['province'] : FALSE;
+        $district_id = (isset($parameters['district'])) ? $parameters['district'] : FALSE;
 
         $result = Report::with(
             [
@@ -62,24 +62,18 @@ class Report extends Model
 
         $result = $result->select('pet_id', 'id','last_location_id', 'status', 'date');
 
-
         if($department_id){
             $ubigeoQuery =  Ubigeo::where('deparment','=',$department_id);
         }
         if($province_id){
-            $ubigeoQuery = $ubigeoQuery->where('province','=',);
-            }else{
-                if ($department_id) {
-                    $departments =  Ubigeo::where('deparment','=',$department_id)->select('id')->get();
-                    $array_departments = array_map(function($department){ return $department['id']; }, $departments->toArray());
-                    $result->whereHas('location',function($query) use ($array_departments){
-                        $query->whereIn('ubigeo_id',$array_departments);
-                    });
-                }
-            }
+            $ubigeoQuery = $ubigeoQuery->where('province','=',$province_id);
+        }
+        if ($district_id) {
+            $ubigeoQuery = $ubigeoQuery->where('district','=',$district_id);
         }
 
         if($department_id || $province_id || $district_id){
+            $ubigeoQuery = $ubigeoQuery->select('id')->get();
             $ubigeos = array_map(function($ubigeoQuery){ return $ubigeoQuery['id']; }, $ubigeoQuery->toArray());
 
             $result->whereHas('location',function($query) use ($ubigeos){

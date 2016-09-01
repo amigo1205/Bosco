@@ -21,7 +21,7 @@
 <section id="content">
   <div class="container">
 
-    @include('blocks.block-filters')
+    @include('blocks.block-filters',['type'=>'perdidos'])
 
     <!-- Block Images -->
     <div class="row">

@@ -3,7 +3,8 @@
   <div class="block-filters clearfix">
     <div class="col-lg-12 col-md-12">
       <div class="filter-image"></div>
-      <form id="form-pets-filters" class="form-inline" action="{{ url('filter/mascotas') }}" method="POST">
+      <form id="form-pets-filters" class="form-inline" action="{{ url('filter/mascotas/'.$type) }}" method="POST">
+
         <div class="form-group">
           <select id="ubigeo-department" class="form-control" name="department" required>
             <?php echo $optionDepartments; ?>
