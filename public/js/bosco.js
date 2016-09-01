@@ -1,5 +1,25 @@
 $(document).ready(function() {
 
+  $(".link-user > span").on('click', function () {
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+    }
+    else {
+      $('.link-user > span').removeClass('active');
+      $(this).addClass('active');
+    }
+  });
+
+  $(".nav li > a").on('click', function () {
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    }
+    else {
+      $('.nav li > a').parent().removeClass('active');
+      $(this).parent().addClass('active');
+    }
+  });
+
   $('#form-pets-filters').validate();
 
   $('.check-on').click(function() {

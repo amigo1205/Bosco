@@ -57,6 +57,10 @@
   font-style: normal;
 }
 
+html, 
+body {
+}
+
 body {
   background: #F1F1F2;
   color: #333;
@@ -65,6 +69,9 @@ body {
   min-height: 100vh;
   line-height: 1.8em;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
 }
 
 a, 
@@ -241,10 +248,6 @@ h3.title {
   color: #B4C0C6;
 }
 
-#home-page .block-menu a {
-  color: #d6d7d8;
-}
-
 .block-menu a.active, 
 .block-menu a:hover,
 .block-session a.active, 
@@ -253,7 +256,7 @@ h3.title {
 }
 
 .block-session {
-  padding: 20px 0;
+  padding: 20px 0 0;
 }
 
 .block-session .link-user {
@@ -267,9 +270,10 @@ h3.title {
   cursor: pointer;
   display: block;
   font-size: 11px;
-  height: 20px;
+  height: 40px;
   line-height: 18px;
   margin: 0 auto;
+  padding-bottom: 20px;
   padding-left: 35px;
   width: 140px;
 }
@@ -278,14 +282,14 @@ h3.title {
   display: none;
 }
 
-.block-session .link-user:hover a {
+.block-session .link-user .active a {
   background: #063042;
   display: block;
   left: 30px;
   font-size: 10px;
-  padding: 15px 20px 10px;
+  padding: 5px 20px 10px;
   position: absolute;
-  top: 20px;
+  top: 40px;
   z-index: 10;
 }
 
@@ -696,6 +700,23 @@ a.btn-video:hover {
 
 /* Works */
 
+.block-works {
+  position: relative;
+}
+
+.block-works-item-return {
+  background: url('../img/sprite.png') no-repeat -85px 0;
+  bottom: 40px;
+  display: block;
+  font-size: 0;
+  height: 33px;
+  position: absolute;
+  right: 40px;
+  text-indent: -9999px;
+  width: 33px;
+  z-index: 9;
+}
+
 .block-works .block-work-item {
   overflow-y: hidden;
   padding-left: 0;
@@ -719,7 +740,12 @@ a.btn-video:hover {
   width: 100%;
 }
 
-.block-works .block-work-item a:hover .block-works-background {
+.block-works .block-work-item .service-item {
+  cursor: pointer;
+}
+
+.block-works .block-work-item a:hover .block-works-background, 
+.block-works .block-work-item .service-item:hover .block-works-background {
   background: rgba(233, 46, 46, 0.9);
 }
 
@@ -960,6 +986,10 @@ a.btn-video:hover {
   width: 206px;
 }
 
+#block-reports-founds.block-reports li a.report-add {
+  padding-top: 120px;
+}
+
 #block-reports-founds li a.report-add {
   height: 320px;
 }
@@ -971,7 +1001,7 @@ a.btn-video:hover {
   display: block;
   font-size: 40px;
   height: 46px;
-  line-height: 40px;
+  line-height: 35px;
   margin: 0 auto 25px;
   width: 46px;
 }
@@ -1773,6 +1803,9 @@ footer .block-socialnetwork li a.link-instagran {
 }
 
 @media only screen and (min-width : 767px) {
+  #home-page .block-menu a {
+    color: #d6d7d8;
+  }
   .navbar {
     margin-bottom: 0;
     border: none;
@@ -1796,14 +1829,17 @@ footer .block-socialnetwork li a.link-instagran {
     float: none;
     padding: 0 35px;
   }
-  .nav > li > a {
+  .nav > li > a, 
+  .nav > li > span {
     background-color: #063042 !important;
     line-height: 28px;
   }
-  #home-page .nav > li > a {
+  #home-page .nav > li > a, 
+  #home-page .nav > li > span {
     background: none !important;
   }
-  .nav > li > a:hover {
+  .nav > li > a:hover, 
+  .nav > li > span:hover {
     background: none;
   }
   #form-pets-filters {
@@ -1963,13 +1999,34 @@ footer .block-socialnetwork li a.link-instagran {
   .block-menu li.menu-item-session {
     display: block;
   }
-  .nav > li a {
+  .nav > li a, 
+  .nav > li span {
     color: #063042;
+    cursor: pointer;
     font-size: 16px;
   }
   .block-menu a.active, 
-  .block-menu a:hover {
+  .block-menu a:hover, 
+  .block-menu span.active, 
+  .block-menu span:hover {
     color: #111 !important;
+  }
+  .nav li ul {
+    background: #ddd;
+    display: none;
+  }
+  .nav li.active ul {
+    display: block;
+  } 
+  .nav li li {
+    display: block;
+    min-height: auto;
+  }
+  .nav li li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
   }
   .block-session {
     display: none;
@@ -2320,4 +2377,36 @@ footer .block-socialnetwork li a.link-instagran {
     height: auto;
     width: 100%;
   }
+}
+
+.section-works {
+  position: relative;
+}
+
+.works-content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  -webkit-transition: all .6s ease-in-out;
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -ms-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+.works-content-right {
+  right: -100%;
+}
+
+.works-content-left {
+  left: -100%;
+}
+
+.works-content-left:target {
+  left: 0;
+}
+
+.works-content-right:target {
+  right: 0;
 }
