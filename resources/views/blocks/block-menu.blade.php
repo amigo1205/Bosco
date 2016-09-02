@@ -39,6 +39,7 @@
                     @else
                     <a href="#">{{ $user->name }} <em class="caret"></em></a>
                     <ul>
+                      <li><a href="{{ url('mis-reportes') }}">Mis Reportes</a></li>
                       <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
                     </ul>
                     @endif
@@ -55,7 +56,7 @@
                 <span>
                   {{ $user->name }} <em class="caret"></em>
                   <ul>
-                    <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
+                    <li><a href="{{ url('mis-reportes') }}">Mis Reportes</a></li>
                     <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
                   </ul>
                 </span>

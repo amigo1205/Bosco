@@ -14,12 +14,6 @@ class PetsController extends Controller
 {
 	public function getPetsLost()
 	{
-    $ubigeoId = FALSE;
-    if ($request->isMethod('get')){
-      if ($request->get('district')) {
-        $ubigeoId = $request->get('district');
-      }
-    }
     $optionDepartments = FALSE;
     $departments = Ubigeo::getDataDepartments();
     if (!empty($departments)) {
@@ -32,7 +26,6 @@ class PetsController extends Controller
       'status' => 'lost',
       'userid' => FALSE
     );
-    if ($ubigeoId) $parameters['ubigeoid'] = $ubigeoId;
     $reports = Report::getDataReports($parameters, TRUE, 10, 'mascotas/perdidos');
 		return view('pets.page-pets-lost', 
       [
@@ -92,7 +85,9 @@ class PetsController extends Controller
       $parameters = array(
           'status' => 'lost',
           'userid' => FALSE,
-          'department' => $request->get('department')
+          'department' => $request->get('department',null),
+          'province' => $request->get('province',null),
+          'district' => $request->get('district',null)
       );
 
       return response()->json([
