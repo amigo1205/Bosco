@@ -220,12 +220,12 @@ h3.title {
   width: 80px;
 }
 
-#home-page .block-logo h1 {
+#home-page header .block-logo h1 {
   height: 39px;
   margin-top: -10px;
 }
 
-#home-page .block-logo h1 a {
+#home-page header .block-logo h1 a {
   background: url('../img/bosco_logo_home.png') no-repeat 0 0;
   font-size: 35px;
   font-weight: normal;
@@ -278,19 +278,33 @@ h3.title {
   width: 140px;
 }
 
-.block-session .link-user a {
+.block-session .link-user ul {
   display: none;
 }
 
-.block-session .link-user .active a {
-  background: #063042;
+.block-session .link-user .active ul {
   display: block;
   left: 30px;
-  font-size: 10px;
-  padding: 5px 20px 10px;
   position: absolute;
   top: 40px;
   z-index: 10;
+}
+
+.block-session .link-user a {
+  background: #063042;
+  display: block;
+  font-size: 10px;
+  padding: 5px 20px;
+}
+
+.block-session .link-user li:first-child a {
+  border-radius: 3px 3px 0 0;
+  padding-top: 10px;
+}
+
+.block-session .link-user li:last-child a {
+  border-radius: 0 0 3px 3px;
+  padding-bottom: 10px;
 }
 
 /* Header Content */
@@ -772,7 +786,7 @@ a.btn-video:hover {
 }
 
 .block-suscription .block-suscription-item{
-  height: 371px;
+  height: 471px;
   overflow-y: hidden;
   padding-left: 0;
   padding-right: 0;
@@ -784,7 +798,7 @@ a.btn-video:hover {
   -webkit-transition: background .25s ease-in-out;
   background: rgba(255, 255, 255, 0.8);
   left: 0;
-  height: 371px;
+  height: 471px;
   position: absolute;
   top: 0;
   width: 100%;
@@ -1029,6 +1043,7 @@ a.btn-video:hover {
   color: #fff;
   font-size: 14px;
   left: 0;
+  min-height: 1000px;
   padding: 30px 0 60px;
   position: absolute;
   top: 0;
@@ -1723,6 +1738,7 @@ footer {
   padding: 20px;
   position: absolute;
   width: 100%;
+  z-index: 100;
 }
 
 footer .block-logo h1 a {
@@ -1850,6 +1866,9 @@ footer .block-socialnetwork li a.link-instagran {
     margin-right: auto;
     max-width: 1039px;
   }
+  .works-app {
+    display: none;
+  }
 }
 
 @media only screen and (max-width : 1150px) {
@@ -1868,6 +1887,9 @@ footer .block-socialnetwork li a.link-instagran {
     line-height: 30px;
     margin-top: 7%;
     padding-bottom: 26px;
+  }
+  .block-works-item img {
+    max-width: none;
   }
 }
 
@@ -1936,13 +1958,12 @@ footer .block-socialnetwork li a.link-instagran {
     margin-right: 10px;
   }
   .block-works-item {
-    max-height: 500px;
+    max-height: 800px;
   }
   footer .block-menu li {
     padding: 0 8px;
   }
 }
-
 
 @media only screen and (min-width : 767px) and (max-width : 992px) {
   .nav li {
@@ -2095,7 +2116,8 @@ footer .block-socialnetwork li a.link-instagran {
     max-width: 100%;
   }
   .block-suscription {
-    padding: 30px 0 !important;
+    height: auto;
+    padding: 0 !important;
   }
   .block-suscription h3 {
     font-size: 24px;
@@ -2106,6 +2128,21 @@ footer .block-socialnetwork li a.link-instagran {
   }
   .block-suscription .form-actions .btn {
     height: 40px;
+  }
+  .block-suscription .block-suscription-item {
+    height: auto;
+    max-height: 370px;
+    overflow: hidden;
+    position: relative;
+  }
+  .block-suscription .block-suscription-item .block-suscription-detail {
+    top: 50px;
+  }
+  .block-suscription .block-suscription-item img {
+    margin-top: 0;
+  }
+  .works-desktop {
+    display: none;
   }
   .block-works-item-detail {
     height: 800px;
@@ -2155,6 +2192,15 @@ footer .block-socialnetwork li a.link-instagran {
   .pet-detail-right {
     float: none;
     width: 100%;
+  }
+  section#content {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+  footer {
+    position: static;
+    z-index: 2;
   }
   footer .block-menu li {
     margin: 0;
@@ -2381,6 +2427,7 @@ footer .block-socialnetwork li a.link-instagran {
 
 .section-works {
   position: relative;
+  width: 100%;
 }
 
 .works-content {
@@ -2395,6 +2442,10 @@ footer .block-socialnetwork li a.link-instagran {
   transition: all .6s ease-in-out;
 }
 
+.block-works-items {
+  position: relative;
+}
+
 .works-content-right {
   right: -100%;
 }
@@ -2402,11 +2453,12 @@ footer .block-socialnetwork li a.link-instagran {
 .works-content-left {
   left: -100%;
 }
-
+/*
 .works-content-left:target {
   left: 0;
+  z-index: 3;
 }
 
 .works-content-right:target {
   right: 0;
-}
+}*/

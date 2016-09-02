@@ -20,6 +20,26 @@ $(document).ready(function() {
     }
   });
 
+  $(".works-desktop #block-works-web > a").click(function(e) {
+    e.preventDefault();
+    $( ".works-content-left" ).animate({ "left": "0" }, "slow" );
+  });
+
+  $(".works-desktop #block-works-app > a").click(function(e) {
+    e.preventDefault();
+    $( ".works-content-right" ).animate({ "right": "0" }, "slow" );
+  });
+
+  $('.works-content-left .block-works-item-return').click(function(e) {
+    e.preventDefault();
+    $( ".works-content-left" ).animate({ "left": "-100%" }, "slow" );
+  });
+
+  $('.works-content-right .block-works-item-return').click(function(e) {
+    e.preventDefault();
+    $( ".works-content-right" ).animate({ "right": "-100%" }, "slow" );
+  });
+
   $('#form-pets-filters').validate();
 
   $('.check-on').click(function() {

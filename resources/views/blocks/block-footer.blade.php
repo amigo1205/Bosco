@@ -1,4 +1,4 @@
-<footer>
+<footer class="clearfix">
 
   <div class="container-fluid">
 

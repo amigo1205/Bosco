@@ -89,10 +89,10 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid block-works-items">
 
-    <!-- Block Works -->
-    <div id="works" class="row">
+    <!-- Block Works Desktop -->
+    <div id="works" class="row works-desktop">
       <div class="block-works clearfix">
         <div id="block-works-web" class="block-work-item col-lg-6 col-md-6 col-sm-6">
           <a href="#works-web">
@@ -103,6 +103,26 @@
         </div>
         <div id="block-works-app" class="block-work-item col-lg-6 col-md-6 col-sm-6">
           <a href="#works-app">
+            <div class="block-works-background"></div>
+            <div class="block-works-detail"><h3>App</h3></div>
+            <img src="{{ asset('images/work_item_app.png') }}">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block Works App -->
+    <div id="works" class="row works-app">
+      <div class="block-works clearfix">
+        <div id="block-works-web" class="block-work-item col-lg-6 col-md-6 col-sm-6">
+          <a href="{{ url('como-funciona/web') }}">
+            <div class="block-works-background"></div>
+            <div class="block-works-detail"><h3>Web</h3></div>
+            <img src="{{ asset('images/work_item_web.png') }}">
+          </a>
+        </div>
+        <div id="block-works-app" class="block-work-item col-lg-6 col-md-6 col-sm-6">
+          <a href="{{ url('como-funciona/app') }}">
             <div class="block-works-background"></div>
             <div class="block-works-detail"><h3>App</h3></div>
             <img src="{{ asset('images/work_item_app.png') }}">

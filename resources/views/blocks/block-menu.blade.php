@@ -54,7 +54,10 @@
               <div class="link-user">
                 <span>
                   {{ $user->name }} <em class="caret"></em>
-                  <a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a>
+                  <ul>
+                    <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
+                    <li><a href="{{ url('cerrar-sesion') }}">Cerrar sesión</a></li>
+                  </ul>
                 </span>
               </a>
             @endif

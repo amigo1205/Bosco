@@ -7,6 +7,7 @@
     <!-- Block Works Item -->
     <div class="row">
       <div id="block-works-item-web" class="block-works-item clearfix">
+        <a href="{{ url('como-funciona') }}" class="block-works-item-return">Regresar</a>
         <a href="#" class="block-works-item-link"></a>
         <img src="{{ asset('images/work_web.png') }}">
         <div class="block-works-item-detail">
