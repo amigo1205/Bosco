@@ -231,8 +231,7 @@ h3.title {
   font-weight: normal;
   height: 39px;
   line-height: 40px;
-  padding-left: 37px;
-  width: 135px;
+  padding-left: 45px;
 }
 
 .block-menu {
@@ -310,8 +309,8 @@ h3.title {
 /* Header Content */
 
 .header-content {
-  background: #fff;
-  height: 60px;
+  height: 80px;
+  padding-top: 20px;
   overflow: hidden;
 }
 
@@ -321,10 +320,10 @@ h3.title {
 
 .block-buttons a,
 .block-buttons a.default {
-  border: 1px solid #E63A38;
+  border: 1px solid #838ca9;
   border-radius: 3px;
   background: #fff;
-  color: #E63A38;
+  color: #838ca9;
   font-size: 11px;
   font-weight: normal;
   height: 30px;
@@ -347,7 +346,7 @@ h3.title {
 #home-page header {
   background: none;
   position: absolute;
-  top: 0;
+  top: 10px;
   width: 100%;
   z-index: 2;
 }
@@ -436,7 +435,7 @@ input[type="submit"]:hover {
   background-position-x: center;
   background-position-y: bottom;
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   width: 100%;
 }
@@ -464,7 +463,7 @@ a.btn-video:hover {
 
 .block-video-content {
   color: #fff;
-  padding-top: 220px;
+  padding-top: 21%;
   text-align: center;
 }
 
@@ -589,8 +588,8 @@ a.btn-video:hover {
 /* Block Partners */
 
 .block-partners {
-  background: #fff;
-  height: 110px;
+  background: #ededed;
+  height: 10vh;
   padding-left: 2%;
   padding-right: 2%;
   text-align: center;
@@ -598,8 +597,8 @@ a.btn-video:hover {
 
 .block-partners ul li {
   display: inline-block;
-  padding: 30px 3%;
   width: 16%;
+  line-height: 10vh;
 }
 
 .block-partners ul li a {
@@ -808,7 +807,7 @@ a.btn-video:hover {
   padding-right: 5%;
   position: absolute;
   text-align: center;
-  top: 100px;
+  top: 125px;
   width: 100%;
 }
 
@@ -844,6 +843,7 @@ a.btn-video:hover {
 .bg-home #page-home .block-suscription h3, 
 .bg-home #page-home .block-suscription h5 {
   color: #fff;
+  padding-top: 10px;
 }
 
 .block-suscription .block-suscription-item img {
@@ -889,8 +889,8 @@ a.btn-video:hover {
 }
 
 #page-home .block-suscription .form-control{
-  background: #9E9EA0;
-  border-color: #9E9EA0;
+  background: rgba(255,255,255,0.3);
+  border-color: rgba(255, 255, 255, 0);
   color: #fff;
   width: 100%;
 }
@@ -1102,6 +1102,176 @@ a.btn-video:hover {
 
 .block-works-item-detail ul li div p {
   line-height: 26px;
+}
+
+.block-team{
+  height: 80vh;
+  background-image: url("../images/about_us_item_1.png");
+  position: relative;
+  background-size: 100%;
+  font-family: "Montserrat Ultra Light", Arial, "Georgia", serif;
+}
+
+.block-team .block-team-content {
+  color: #fff;
+  padding-top: 14%;
+  text-align: center;
+}
+
+.block-team .block-team-content h2{
+  font-weight: bold;
+}
+
+.block-team .block-team-content h4{
+  padding-top: 20px;
+  font-style: italic;
+}
+
+.block-help{
+  height: 80vh;
+  background-image: url("../img/bg-subscription.png");
+  position: relative;
+  background-size: 100%;
+}
+/*
+.block-help:hover .block-help-background{
+  background: rgba(6, 48, 66, 0.6);
+}
+*/
+.block-help .block-help-background {
+  transition: background .25s ease-in-out;
+  -moz-transition: background .25s ease-in-out;
+  -webkit-transition: background .25s ease-in-out;
+  background: rgba(255, 255, 255, 0.9);
+  left: 0;
+  height: 80vh;
+  position: absolute;
+  width: 100%;
+}
+.block-help .block-help-container{
+  width:100%;
+  height: 80vh;
+  position: absolute;
+}
+.block-help .block-help-container .block-help-title{
+  width: 100%;
+  height: 35vh;
+  text-align: center;
+  color: #9e9e9e;
+}
+
+.block-help .block-help-container .block-help-title h2{
+  padding-top: 12vmin;
+}
+
+.block-help .block-help-container .block-help-title h5{
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.block-help .block-help-container .block-help-content{
+  /*width: 100%;
+  height: 30vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;*/
+  height: 30vh;
+  padding-top: 0;
+}
+.block-help .block-help-container .block-help-content {
+  overflow: hidden;
+  position: relative;
+}
+
+.block-help .block-help-container .block-help-content {
+  font-size: 14px;
+  height: 25vh;
+  width: 100%;
+}
+
+.block-help .block-help-container .block-help-content ul li {
+  display: block;
+  float: left;
+  width: 24%;
+}
+
+.block-help .block-help-container .block-help-content .block-works-item-tag > img {
+  display: block;
+  height: 100px;
+  margin-bottom: 35px;
+  width: 100px;
+}
+
+.block-help .block-help-container .block-help-content ul li div div {
+  max-width: 250px;
+}
+
+.block-help .block-help-container .block-help-content ul li div p {
+  line-height: 26px;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+.block-help .block-help-container .block-help-content ul li div p:first-child {
+  line-height: 26px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #717171;
+}
+
+.block-help .block-help-container .block-help-start{
+  height: 10vh;
+  line-height: 13vh;
+  text-align: center;
+ }
+
+.block-help .block-help-container .block-help-start a,
+.block-recent .block-recent-more a
+{
+  border: 1px solid #E63A38;
+  border-radius: 3px;
+  background: rgba(255,255,255,0);
+  color: #E63A38;
+  font-size: 11px;
+  font-weight: normal;
+  height: 30px;
+  line-height: 10px;
+  margin: 0 2px;
+  max-width: 126px;
+  padding: 8px 20px;
+  text-align: center;
+  width: 126px;
+}
+
+.block-help .block-help-container .block-help-start a:hover{
+  background-color: #E63A38;
+  color: #fff;
+}
+
+.block-recent{
+  background-color: #f0f0f0;
+  height: 70vh;
+}
+
+.block-recent .block-recent-title{
+  padding-top: 10vh;
+  padding-left: 10vw;
+  padding-bottom: 1vw;
+}
+
+.block-recent .block-recent-content{
+  padding-left: 10vw;
+}
+
+.block-recent .block-recent-content .container{
+  margin-left: -4vw;
+}
+
+.block-recent  .block-recent-more{
+  padding-right: 10vw;
+  height: 10vh;
+  line-height: 10vh;
 }
 
 /* Modal */
@@ -1426,7 +1596,7 @@ a.btn-video:hover {
 .modal-form-report-menu li em {
   border: 1px solid #E73737;
   border-radius: 100%;
-  color: #a5a5a5;
+  color: #E73737;
   display: block;
   float: left;
   font-size: 10px;
@@ -1495,7 +1665,7 @@ a.btn-video:hover {
   border: 1px solid #eee;
   color: #1E2942;
   font-size: 13px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   height: 38px;
   line-height: 1.42857143;
   position: relative;
@@ -1733,6 +1903,7 @@ a.btn-video:hover {
 
 footer {
   background: #063042;
+  border: 1px solid #7b8680;
   bottom: -105px;
   height: 105px;
   padding: 20px;
@@ -1843,7 +2014,7 @@ footer .block-socialnetwork li a.link-instagran {
   .nav li {
     display: inline-block;
     float: none;
-    padding: 0 35px;
+    padding: 0 75px;
   }
   .nav > li > a, 
   .nav > li > span {
@@ -2146,8 +2317,15 @@ footer .block-socialnetwork li a.link-instagran {
     display: none;
   }
   .block-works-item-detail {
-    height: 800px;
-    padding-top: 0;
+    background: rgba(233, 46, 46, 0.9);
+    color: #fff;
+    font-size: 14px;
+    left: 0;
+    min-height: 1000px;
+    padding: 30px 0 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
   .block-works-item-detail h3 {
     margin-bottom: 0;
@@ -2242,6 +2420,33 @@ footer .block-socialnetwork li a.link-instagran {
     display: inline-block;
     padding: 10px 5%;
     width: 32%;
+  }
+
+  .block-help {
+    height: 110vh;
+    background-image: url(../img/bg-subscription.png);
+    position: relative;
+    background-size: 100%;
+  }
+
+  .block-help .block-help-background {
+    transition: background .25s ease-in-out;
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
+    background: rgba(255, 255, 255, 0.9);
+    left: 0;
+    height: 110vh;
+    position: absolute;
+    width: 100%;
+  }
+
+  .block-help .block-help-container .block-help-title h2{
+    padding-top: 1vmin;
+  }
+  .block-help .block-help-container .block-help-content {
+    font-size: 14px;
+    height: 60vh;
+    width: 100%;
   }
 }
 
@@ -2463,3 +2668,37 @@ footer .block-socialnetwork li a.link-instagran {
 .works-content-right:target {
   right: 0;
 }*/
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  border:1px solid red;
+  border-radius:50%;
+  outline:none;
+}
+input[type='radio']:hover {
+  box-shadow:0 0 5px 0px red inset;
+}
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;
+  border-radius:50%;
+}
+input[type='radio']:checked:before {
+  background:red;
+}
+
+.form-group .pet-type{
+  vertical-align: middle;
+  display: flex;
+}
+
+.form-group .pet-type label{
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-top: 5px;
+}

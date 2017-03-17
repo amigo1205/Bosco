@@ -16,6 +16,13 @@
           <div id="form-report-lost-tab-1" class="form-report-lost-tab">
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
+                <label>Tipo</label>
+                <div class="pet-type">
+                  <input type="radio" name="petType" value="0"><label>Perro</label>
+                  <input type="radio" name="petType" value="1"><label>Gato</label>
+                </div>
+              </div>
+              <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" class="form-control">
               </div>

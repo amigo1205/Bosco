@@ -31,7 +31,8 @@
                     <a href="{{ url('/como-funciona')}}" {{ (Request::is('como-funciona') || Request::is('como-funciona/*'))  ? ' class = "active"' : null }}>¿Como funciona?</a>
                   </li>
                   <li class="last">
-                    <a href="{{ url('/ayuda')}}" {{ (Request::is('ayuda') || Request::is('ayuda/*'))  ? ' class = "active"' : null }}>Ayuda</a>
+                   <!-- <a href="{{ url('/ayuda')}}" {{ (Request::is('ayuda') || Request::is('ayuda/*'))  ? ' class = "active"' : null }}>Ayuda</a>-->
+                     <a href="{{url('/contactanos')}}">Contáctanos</a>
                   </li>
                   <li data-toggle="modal" class="menu-item-session">
                     @if(empty($user->id))

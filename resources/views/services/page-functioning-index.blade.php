@@ -1,139 +1,57 @@
-@extends('layouts.base')
+@extends('layouts.home')
 @section('content')
 
 <section id="content" class="section-works">
 
-  <!-- Block Works Item -->
-  <div id="works-web" class="works-content works-content-left">
-    <div id="block-works-item-web" class="block-works-item clearfix">
-      <a href="#works" class="block-works-item-return">Regresar</a>
-      <a href="#" class="block-works-item-link"></a>
-      <img src="{{ asset('images/work_web.png') }}">
-      <div class="block-works-item-detail">
-        <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <h3>Web</h3>
-          <ul>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-web-tag-1"></em>
-                <div>
-                  <p>Tipo de reporte</p>
-                  <p>Selecciona el tipo de reporte a generar. Mascota perdida o mascota encontrada.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-web-tag-2"></em>
-                <div>
-                  <p>Datos</p>
-                  <p>Llena tus datos, los de tu mascot, los detalles del reporte y publicarlo.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-web-tag-3"></em>
-                <div>
-                  <p>Volante al instante</p>
-                  <p>Genera automaticamente un volante par aimprimir y compartir en redes sociales.</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Block Works Item -->
-  <div id="works-app" class="works-content works-content-right">
-    <div id="block-works-item-app" class="block-works-item clearfix">
-      <a href="#works" class="block-works-item-return">Regresar</a>
-      <a href="#" class="block-works-item-link"></a>
-      <img src="{{ asset('images/work_app.png') }}">
-      <div class="block-works-item-detail">
-        <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <h3>App</h3>
-          <ul>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-app-tag-1"></em>
-                <div>
-                  <p>Reportar</p>
-                  <p>Si tu mascot se pierde, puedes reportarla como perdida a través de la aplicación.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-app-tag-2"></em>
-                <div>
-                  <p>Growd GPS</p>
-                  <p>Cada smartphone con el app funciona como un radar de búsqueda paraa encontrarla.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="block-works-item-tag clearfix">
-                <em class="works-item-app-tag-3"></em>
-                <div>
-                  <p>Encontrado</p>
-                  <p>Tna pronto como un usuario pase cerca de ella, te mandaremos la ubicción excta donde fue vista.</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid block-works-items">
-
-    <!-- Block Works Desktop -->
-    <div id="works" class="row works-desktop">
-      <div class="block-works clearfix">
-        <div id="block-works-web" class="block-work-item col-lg-6 col-md-6 col-sm-6">
-          <a href="#works-web">
-            <div class="block-works-background"></div>
-            <div class="block-works-detail"><h3>Web</h3></div>
-            <img src="{{ asset('images/work_item_web.png') }}">
-          </a>
-        </div>
-        <div id="block-works-app" class="block-work-item col-lg-6 col-md-6 col-sm-6">
-          <a href="#works-app">
-            <div class="block-works-background"></div>
-            <div class="block-works-detail"><h3>App</h3></div>
-            <img src="{{ asset('images/work_item_app.png') }}">
-          </a>
+    <!-- Block  -->
+    <div class="row">
+      <div class="block-team">
+        <div class="block-team-content">
+          <h2>El equiop</h2>
+          <img src="https://placehold.it/100x10">
+          <h4>Somos una comunidad creciente enfocada en ayudar a encontrar mascotas perdidas.</h4>
         </div>
       </div>
     </div>
 
-    <!-- Block Works App -->
-    <div id="works" class="row works-app">
-      <div class="block-works clearfix">
-        <div id="block-works-web" class="block-work-item col-lg-6 col-md-6 col-sm-6">
-          <a href="{{ url('como-funciona/web') }}">
-            <div class="block-works-background"></div>
-            <div class="block-works-detail"><h3>Web</h3></div>
-            <img src="{{ asset('images/work_item_web.png') }}">
+    <!-- Block Works -->
+    <div class="row">
+      <div class="block-about-us clearfix">
+        <div class="block-about-us-item col-lg-4 col-md-4 col-sm-4">
+          <a href="#">
+            <div class="block-about-us-background"></div>
+            <div class="block-about-us-detail">
+              <h3>¿Quiénes somos?</h3>
+              <p>Somos una comunidad creciente enfocada en encontrar mascotas perdidas.</p>
+            </div>
+            <img src="{{ asset('images/about_us_item_2.png') }}">
+            <span class="block-about-us-line"></span>
           </a>
         </div>
-        <div id="block-works-app" class="block-work-item col-lg-6 col-md-6 col-sm-6">
-          <a href="{{ url('como-funciona/app') }}">
-            <div class="block-works-background"></div>
-            <div class="block-works-detail"><h3>App</h3></div>
-            <img src="{{ asset('images/work_item_app.png') }}">
+        <div class="block-about-us-item col-lg-4 col-md-4 col-sm-4">
+          <a href="#">
+            <div class="block-about-us-background"></div>
+            <div class="block-about-us-detail">
+              <h3>¿Por qué lo hacemos?</h3>
+              <p>Porque una mascota es parte de una familia y no hay nada más importante que la seguridad y protección de los que más queremos.</p>
+            </div>
+            <img src="{{ asset('images/about_us_item_3.png') }}">
+            <span class="block-about-us-line"></span>
+          </a>
+        </div>
+        <div class="block-about-us-item col-lg-4 col-md-4 col-sm-4">
+          <a href="#">
+            <div class="block-about-us-background"></div>
+            <div class="block-about-us-detail">
+              <h3>¿Cómo lo hacemos?</h3>
+              <p>Trabajando en equipo para brindar tecnología orientada al cuidado y protección de las mascotas.</p>
+            </div>
+            <img src="{{ asset('images/about_us_item_2.png') }}">
+            <span class="block-about-us-line"></span>
           </a>
         </div>
       </div>
     </div>
-
-    @include('blocks.block-subscription')
-
-  </div>
 </section>
 
 @endsection
