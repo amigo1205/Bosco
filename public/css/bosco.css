@@ -1144,13 +1144,12 @@ a.btn-video:hover {
   -webkit-transition: background .25s ease-in-out;
   background: rgba(255, 255, 255, 0.9);
   left: 0;
-  height: 80vh;
+  height: 100%;
   position: absolute;
   width: 100%;
 }
 .block-help .block-help-container{
   width:100%;
-  height: 80vh;
   position: absolute;
 }
 .block-help .block-help-container .block-help-title{
@@ -1170,15 +1169,6 @@ a.btn-video:hover {
   padding-right: 10%;
 }
 
-.block-help .block-help-container .block-help-content{
-  /*width: 100%;
-  height: 30vh;
-  padding-left: 5%;
-  padding-right: 5%;
-  text-align: center;*/
-  height: 30vh;
-  padding-top: 0;
-}
 .block-help .block-help-container .block-help-content {
   overflow: hidden;
   position: relative;
@@ -1186,7 +1176,7 @@ a.btn-video:hover {
 
 .block-help .block-help-container .block-help-content {
   font-size: 14px;
-  height: 25vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -2423,11 +2413,11 @@ footer .block-socialnetwork li a.link-instagran {
   }
 
   .block-help {
-    height: 110vh;
-    background-image: url(../img/bg-subscription.png);
-    position: relative;
-    background-size: 100%;
-  }
+       height: 180vh;
+       background-image: url(../img/bg-subscription.png);
+       position: relative;
+       background-size: 100%;
+     }
 
   .block-help .block-help-background {
     transition: background .25s ease-in-out;
@@ -2435,7 +2425,7 @@ footer .block-socialnetwork li a.link-instagran {
     -webkit-transition: background .25s ease-in-out;
     background: rgba(255, 255, 255, 0.9);
     left: 0;
-    height: 110vh;
+    height: 100%;
     position: absolute;
     width: 100%;
   }
@@ -2445,7 +2435,7 @@ footer .block-socialnetwork li a.link-instagran {
   }
   .block-help .block-help-container .block-help-content {
     font-size: 14px;
-    height: 60vh;
+    height: 100%;
     width: 100%;
   }
 }
@@ -2489,6 +2479,12 @@ footer .block-socialnetwork li a.link-instagran {
   }
   .modal-form-report-menu li {
     margin: 0 2%;
+  }
+  .block-help {
+    height: 165vh;
+    background-image: url(../img/bg-subscription.png);
+    position: relative;
+    background-size: 100%;
   }
 }
 
@@ -2564,6 +2560,12 @@ footer .block-socialnetwork li a.link-instagran {
     border-radius: 3px;
     font-size: 13px;
     padding: 3px 10px;
+  }
+  .block-help {
+    height: 200vh;
+    background-image: url(../img/bg-subscription.png);
+    position: relative;
+    background-size: 100%;
   }
 }
 

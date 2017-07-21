@@ -41,8 +41,7 @@
           </div>
           <div class="block-help-content">
               <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul>
-                  <li>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="block-works-item-tag clearfix">
                       <img src="https://placehold.it/100x100">
                       <div>
@@ -50,8 +49,8 @@
                         <p>Ingresa a la secci...... mascotas perdidas" en la parte superior.</p>
                       </div>
                     </div>
-                  </li>
-                  <li>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="block-works-item-tag clearfix">
                       <img src="https://placehold.it/100x100">
                       <div>
@@ -59,8 +58,8 @@
                         <p>Selecciona el tipo de reporte a generar; mascota perdida o mascota encontrada.</p>
                       </div>
                     </div>
-                  </li>
-                  <li>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="block-works-item-tag clearfix">
                       <img src="https://placehold.it/100x100">
                       <div>
@@ -68,8 +67,8 @@
                         <p>Completa tus datos, Ios de tu mascota, los detalles del reporte y listo.</p>
                       </div>
                     </div>
-                  </li>
-                  <li>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="block-works-item-tag clearfix">
                       <img src="https://placehold.it/100x100">
                       <div>
@@ -77,8 +76,7 @@
                         <p>Adicional, se genera un volante que puedes imprimir y/o compartir en redes sociales.</p>
                       </div>
                     </div>
-                  </li>
-                </ul>
+                  </div>
               </div>
           </div>
           <div class="block-help-start">
